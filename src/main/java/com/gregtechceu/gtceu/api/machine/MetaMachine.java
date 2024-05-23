@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.api.machine;
 import com.gregtechceu.gtceu.api.RotationState;
 import com.gregtechceu.gtceu.api.block.BlockProperties;
 import com.gregtechceu.gtceu.api.block.IAppearanceBlock;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
 import com.gregtechceu.gtceu.api.blockentity.IPaintable;
 import com.gregtechceu.gtceu.api.blockentity.ITickSubscription;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
@@ -467,7 +467,7 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
 
     public Direction getFrontFacing() {
         var blockState = getBlockState();
-        if (blockState.getBlock() instanceof MetaMachineBlock machineBlock) {
+        if (blockState.getBlock() instanceof MachineBlock machineBlock) {
             return machineBlock.getFrontFacing(blockState);
         }
         return Direction.NORTH;
@@ -475,7 +475,7 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
 
     public final boolean hasFrontFacing() {
         var blockState = getBlockState();
-        if (blockState.getBlock() instanceof MetaMachineBlock machineBlock) {
+        if (blockState.getBlock() instanceof MachineBlock machineBlock) {
             return machineBlock.getRotationState() != RotationState.NONE;
         }
         return false;
@@ -484,7 +484,7 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
     public boolean isFacingValid(Direction facing) {
         if (hasFrontFacing() && facing == getFrontFacing()) return false;
         var blockState = getBlockState();
-        if (blockState.getBlock() instanceof MetaMachineBlock metaMachineBlock) {
+        if (blockState.getBlock() instanceof MachineBlock metaMachineBlock) {
             return metaMachineBlock.rotationState.test(facing);
         }
         return false;
@@ -492,7 +492,7 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
 
     public void setFrontFacing(Direction facing) {
         var blockState = getBlockState();
-        if (blockState.getBlock() instanceof MetaMachineBlock metaMachineBlock && isFacingValid(facing)) {
+        if (blockState.getBlock() instanceof MachineBlock metaMachineBlock && isFacingValid(facing)) {
             getLevel().setBlockAndUpdate(getPos(),
                     blockState.setValue(metaMachineBlock.rotationState.property, facing));
         }

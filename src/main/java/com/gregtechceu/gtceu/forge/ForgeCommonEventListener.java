@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.forge;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
 import com.gregtechceu.gtceu.api.item.armor.ArmorComponentItem;
 import com.gregtechceu.gtceu.api.machine.feature.IInteractedMachine;
 import com.gregtechceu.gtceu.common.ServerCommands;
@@ -36,7 +36,7 @@ public class ForgeCommonEventListener {
     @SubscribeEvent
     public static void onLeftClickBlock(PlayerInteractEvent.LeftClickBlock event) {
         var blockState = event.getLevel().getBlockState(event.getPos());
-        if (blockState.hasBlockEntity() && blockState.getBlock() instanceof MetaMachineBlock block &&
+        if (blockState.hasBlockEntity() && blockState.getBlock() instanceof MachineBlock block &&
                 block.getMachine(event.getLevel(), event.getPos()) instanceof IInteractedMachine machine) {
             if (machine.onLeftClick(event.getEntity(), event.getLevel(), event.getHand(), event.getPos(),
                     event.getFace())) {

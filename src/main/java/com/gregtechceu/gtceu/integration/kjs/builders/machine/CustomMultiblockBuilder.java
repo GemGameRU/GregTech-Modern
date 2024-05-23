@@ -2,8 +2,8 @@ package com.gregtechceu.gtceu.integration.kjs.builders.machine;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.RotationState;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
 import com.gregtechceu.gtceu.api.item.MetaMachineItem;
@@ -64,8 +64,8 @@ public class CustomMultiblockBuilder extends MultiblockMachineBuilder {
 
     protected CustomMultiblockBuilder(String name,
                                       Function<IMachineBlockEntity, ? extends MultiblockControllerMachine> metaMachine) {
-        super(GTRegistration.REGISTRATE, name, metaMachine, MetaMachineBlock::new, MetaMachineItem::new,
-                MetaMachineBlockEntity::createBlockEntity);
+        super(GTRegistration.REGISTRATE, name, metaMachine, MachineBlock::new, MetaMachineItem::new,
+                MachineBlockEntity::createBlockEntity);
     }
 
     public static CustomMultiblockBuilder[] tieredMultis(String name,

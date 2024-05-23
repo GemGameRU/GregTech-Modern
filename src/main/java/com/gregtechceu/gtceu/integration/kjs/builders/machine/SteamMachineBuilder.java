@@ -2,8 +2,8 @@ package com.gregtechceu.gtceu.integration.kjs.builders.machine;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.RotationState;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.item.MetaMachineItem;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.steam.SimpleSteamMachine;
@@ -24,8 +24,8 @@ public class SteamMachineBuilder extends MachineBuilder<MachineDefinition> {
 
     public SteamMachineBuilder(String id, boolean isHighPressure, Object... args) {
         super(GTRegistration.REGISTRATE, id, MachineDefinition::createDefinition,
-                holder -> new SimpleSteamMachine(holder, isHighPressure, args), MetaMachineBlock::new,
-                MetaMachineItem::new, MetaMachineBlockEntity::createBlockEntity);
+                holder -> new SimpleSteamMachine(holder, isHighPressure, args), MachineBlock::new,
+                MetaMachineItem::new, MachineBlockEntity::createBlockEntity);
     }
 
     public static <T extends MachineBuilder<? extends MachineDefinition>> void simple(T builder, int tier) {
@@ -61,6 +61,6 @@ public class SteamMachineBuilder extends MachineBuilder<MachineDefinition> {
         }
 
         return MachineFunctionPresets.builder(name, builders, SteamMachineBuilder.class,
-                MachineDefinition::createDefinition, MetaMachineBlock::new, MetaMachineBlockEntity::createBlockEntity);
+                MachineDefinition::createDefinition, MachineBlock::new, MachineBlockEntity::createBlockEntity);
     }
 }

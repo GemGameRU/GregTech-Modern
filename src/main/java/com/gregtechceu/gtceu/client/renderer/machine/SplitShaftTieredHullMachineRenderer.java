@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.client.renderer.machine;
 
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
 import com.gregtechceu.gtceu.client.model.SpriteOverrider;
@@ -39,7 +39,7 @@ public class SplitShaftTieredHullMachineRenderer extends TieredHullMachineRender
         var controllers = part.getControllers();
         for (IMultiController controller : controllers) {
             var state = controller.self().getBlockState();
-            if (state.getBlock() instanceof MetaMachineBlock block) {
+            if (state.getBlock() instanceof MachineBlock block) {
                 var renderer = block.definition.getRenderer();
                 if (renderer instanceof WorkableCasingMachineRenderer workableCasingMachineRenderer) {
                     var baseTexture = workableCasingMachineRenderer.baseCasing;
