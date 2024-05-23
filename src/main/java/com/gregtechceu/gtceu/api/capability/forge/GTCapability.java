@@ -21,8 +21,8 @@ public class GTCapability {
             .createSided(GTCEu.id("energy_container"), IEnergyContainer.class);
     public static final BlockCapability<IEnergyInfoProvider, Direction> CAPABILITY_ENERGY_INFO_PROVIDER = BlockCapability
             .createSided(GTCEu.id("energy_info_provider"), IEnergyInfoProvider.class);
-    public static final BlockCapability<ICoverable, Direction> CAPABILITY_COVERABLE = BlockCapability
-            .createSided(GTCEu.id("coverable"), ICoverable.class);
+    public static final BlockCapability<ICoverableBlock, Direction> CAPABILITY_COVERABLE = BlockCapability
+            .createSided(GTCEu.id("coverable"), ICoverableBlock.class);
     public static final BlockCapability<IToolable, Direction> CAPABILITY_TOOLABLE = BlockCapability
             .createSided(GTCEu.id("toolable"), IToolable.class);
     public static final BlockCapability<IWorkable, Direction> CAPABILITY_WORKABLE = BlockCapability

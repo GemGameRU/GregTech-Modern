@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.capability;
 
-import com.gregtechceu.gtceu.api.block.IAppearance;
+import com.gregtechceu.gtceu.api.block.IAppearanceBlock;
 import com.gregtechceu.gtceu.api.blockentity.ITickSubscription;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public interface ICoverable extends ITickSubscription, IAppearance {
+public interface ICoverableBlock extends ITickSubscription, IAppearanceBlock {
 
     Level getLevel();
 
@@ -66,8 +66,8 @@ public interface ICoverable extends ITickSubscription, IAppearance {
     /**
      * Its an internal method, you should never call it yourself.
      * <br>
-     * Use {@link ICoverable#removeCover(boolean, Direction, Player)} and
-     * {@link ICoverable#placeCoverOnSide(Direction, ItemStack, CoverDefinition, ServerPlayer)} instead
+     * Use {@link ICoverableBlock#removeCover(boolean, Direction, Player)} and
+     * {@link ICoverableBlock#placeCoverOnSide(Direction, ItemStack, CoverDefinition, ServerPlayer)} instead
      * 
      * @param coverBehavior
      * @param side
@@ -205,7 +205,7 @@ public interface ICoverable extends ITickSubscription, IAppearance {
     }
 
     @Nullable
-    static Direction rayTraceCoverableSide(ICoverable coverable, Player player) {
+    static Direction rayTraceCoverableSide(ICoverableBlock coverable, Player player) {
         BlockHitResult rayTrace = (BlockHitResult) player.pick(player.blockInteractionRange(), 0, false);
         if (rayTrace.getType() == HitResult.Type.MISS) {
             return null;
@@ -246,7 +246,7 @@ public interface ICoverable extends ITickSubscription, IAppearance {
         };
     }
 
-    static boolean canPlaceCover(CoverDefinition coverDef, ICoverable coverable) {
+    static boolean canPlaceCover(CoverDefinition coverDef, ICoverableBlock coverable) {
         for (Direction facing : GTUtil.DIRECTIONS) {
             if (coverable.canPlaceCoverOnSide(coverDef, facing)) {
                 var cover = coverDef.createCoverBehavior(coverable, facing);

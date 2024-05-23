@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.cover;
 
 import com.gregtechceu.gtceu.api.capability.IControllable;
-import com.gregtechceu.gtceu.api.capability.ICoverable;
+import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 
@@ -34,7 +34,7 @@ public class ShutterCover extends CoverBehavior implements IControllable {
     @Setter
     private boolean workingEnabled = true;
 
-    public ShutterCover(@NotNull CoverDefinition definition, @NotNull ICoverable coverableView,
+    public ShutterCover(@NotNull CoverDefinition definition, @NotNull ICoverableBlock coverableView,
                         @NotNull Direction attachedSide) {
         super(definition, coverableView, attachedSide);
     }

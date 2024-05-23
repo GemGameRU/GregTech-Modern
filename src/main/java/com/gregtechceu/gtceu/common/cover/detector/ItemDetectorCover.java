@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.common.cover.detector;
 
-import com.gregtechceu.gtceu.api.capability.ICoverable;
+import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.utils.RedstoneUtil;
 
@@ -10,7 +10,7 @@ import net.neoforged.neoforge.items.IItemHandler;
 
 public class ItemDetectorCover extends DetectorCover {
 
-    public ItemDetectorCover(CoverDefinition definition, ICoverable coverHolder, Direction attachedSide) {
+    public ItemDetectorCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide) {
         super(definition, coverHolder, attachedSide);
     }
 

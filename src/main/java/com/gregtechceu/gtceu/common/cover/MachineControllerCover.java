@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.cover;
 
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IControllable;
-import com.gregtechceu.gtceu.api.capability.ICoverable;
+import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
@@ -67,7 +67,7 @@ public class MachineControllerCover extends CoverBehavior implements IUICover {
     @Getter
     private ControllerMode controllerMode = ControllerMode.MACHINE;
 
-    public MachineControllerCover(CoverDefinition definition, ICoverable coverHolder, Direction attachedSide) {
+    public MachineControllerCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide) {
         super(definition, coverHolder, attachedSide);
     }
 

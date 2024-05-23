@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.cover;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IControllable;
-import com.gregtechceu.gtceu.api.capability.ICoverable;
+import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
@@ -102,7 +102,7 @@ public class PumpCover extends CoverBehavior implements IUICover, IControllable 
      * The actual conversion to the platform's values happens inside tick handling.
      */
 
-    public PumpCover(CoverDefinition definition, ICoverable coverHolder, Direction attachedSide, int tier) {
+    public PumpCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide, int tier) {
         super(definition, coverHolder, attachedSide);
         this.tier = tier;
 
