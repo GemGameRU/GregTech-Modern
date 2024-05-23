@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.data.loader;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.worldgen.GTOreDefinition;
@@ -55,7 +55,7 @@ public class OreDataLoader extends SimpleJsonResourceReloadListener {
         GTRegistries.ORE_VEINS.registry().clear();
 
         GTOres.init();
-        AddonFinder.getAddons().forEach(IGTAddon::registerOreVeins);
+        GTAddonFinder.getAddons().forEach(IGTAddon::registerOreVeins);
         ModLoader.postEvent(new GTCEuAPI.RegisterEvent<>(GTRegistries.ORE_VEINS));
         if (GTCEu.isKubeJSLoaded()) {
             RunKJSEventInSeparateClassBecauseForgeIsDumb.fireKJSEvent();

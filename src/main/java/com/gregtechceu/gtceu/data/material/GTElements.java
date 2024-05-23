@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.data.material;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.material.Element;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
@@ -159,7 +159,7 @@ public class GTElements {
     }
 
     public static void init() {
-        AddonFinder.getAddons().forEach(IGTAddon::registerElements);
+        GTAddonFinder.getAddons().forEach(IGTAddon::registerElements);
         ModLoader.postEvent(new GTCEuAPI.RegisterEvent<>(GTRegistries.ELEMENTS));
         if (GTCEu.isKubeJSLoaded()) {
             GTRegistryInfo.registerFor(GTRegistries.ELEMENTS.getRegistryName());

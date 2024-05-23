@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.data.recipe;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.capability.recipe.*;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
@@ -35,7 +35,7 @@ public class GTRecipeCapabilities {
         GTRegistries.RECIPE_CAPABILITIES.register(CWU.name, CWU);
         GTRegistries.RECIPE_CAPABILITIES.register(SU.name, SU);
 
-        AddonFinder.getAddons().forEach(IGTAddon::registerRecipeCapabilities);
+        GTAddonFinder.getAddons().forEach(IGTAddon::registerRecipeCapabilities);
         ModLoader.postEvent(new GTCEuAPI.RegisterEvent<>(GTRegistries.RECIPE_CAPABILITIES));
         GTRegistries.RECIPE_CAPABILITIES.freeze();
     }

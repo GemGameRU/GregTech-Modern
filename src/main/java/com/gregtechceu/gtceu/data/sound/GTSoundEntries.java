@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.data.sound;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
@@ -64,7 +64,7 @@ public class GTSoundEntries {
     public static final SoundEntry METAL_PIPE = REGISTRATE.sound("metal_pipe").build();
 
     public static void init() {
-        AddonFinder.getAddons().forEach(IGTAddon::registerSounds);
+        GTAddonFinder.getAddons().forEach(IGTAddon::registerSounds);
         ModLoader.postEvent(new GTCEuAPI.RegisterEvent<>(GTRegistries.SOUNDS));
         GTRegistries.SOUNDS.values().forEach(SoundEntry::prepare);
         registerSounds();

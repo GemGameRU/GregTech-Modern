@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.data.pack;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
@@ -59,7 +59,7 @@ public class GTDynamicResourcePack implements PackResources {
     }
 
     public GTDynamicResourcePack(PackLocationInfo info) {
-        this(info, AddonFinder.getAddons().stream().map(IGTAddon::addonModId).collect(Collectors.toSet()));
+        this(info, GTAddonFinder.getAddons().stream().map(IGTAddon::addonModId).collect(Collectors.toSet()));
     }
 
     public GTDynamicResourcePack(PackLocationInfo info, Collection<String> domains) {
