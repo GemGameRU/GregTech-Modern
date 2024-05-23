@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.block.ICoilType;
-import com.gregtechceu.gtceu.api.block.IFilterType;
+import com.gregtechceu.gtceu.api.block.ICleanroomFilterType;
 import com.gregtechceu.gtceu.api.machine.multiblock.IBatteryData;
 import com.gregtechceu.gtceu.api.material.material.IMaterialRegistryManager;
 import com.gregtechceu.gtceu.api.registry.GTRegistry;
@@ -38,7 +38,7 @@ public class GTCEuAPI {
     private static boolean highTierInitialized;
 
     public static final Map<ICoilType, Supplier<CoilBlock>> HEATING_COILS = new HashMap<>();
-    public static final Map<IFilterType, Supplier<Block>> CLEANROOM_FILTERS = new HashMap<>();
+    public static final Map<ICleanroomFilterType, Supplier<Block>> CLEANROOM_FILTERS = new HashMap<>();
     public static final Map<IBatteryData, Supplier<BatteryBlock>> PSS_BATTERIES = new HashMap<>();
 
     /**

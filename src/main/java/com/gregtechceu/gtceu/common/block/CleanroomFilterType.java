@@ -1,12 +1,12 @@
 package com.gregtechceu.gtceu.common.block;
 
-import com.gregtechceu.gtceu.api.block.IFilterType;
+import com.gregtechceu.gtceu.api.block.ICleanroomFilterType;
 import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
 
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
-public enum CleanroomFilterType implements IFilterType {
+public enum CleanroomFilterType implements ICleanroomFilterType {
 
     FILTER_CASING("filter_casing", CleanroomType.CLEANROOM),
     FILTER_CASING_STERILE("sterilizing_filter_casing", CleanroomType.STERILE_CLEANROOM);

@@ -961,7 +961,7 @@ public class GTBlocks {
         return casingBlock;
     }
 
-    private static BlockEntry<Block> createCleanroomFilter(IFilterType filterType) {
+    private static BlockEntry<Block> createCleanroomFilter(ICleanroomFilterType filterType) {
         var filterBlock = REGISTRATE.block(filterType.getSerializedName(), p -> (Block) new RendererBlock(p,
                 Platform.isClient() ? new TextureOverrideRenderer(new ResourceLocation("block/cube_all"),
                         Map.of("all", GTCEu.id("block/casings/cleanroom/" + filterType))) : null))

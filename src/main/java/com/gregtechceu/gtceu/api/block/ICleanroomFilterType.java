@@ -6,7 +6,7 @@ import net.minecraft.util.StringRepresentable;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface IFilterType extends StringRepresentable {
+public interface ICleanroomFilterType extends StringRepresentable {
 
     /**
      * @return The cleanroom type of this filter.

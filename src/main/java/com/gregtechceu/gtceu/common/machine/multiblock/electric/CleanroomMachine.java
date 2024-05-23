@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.electric;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.block.IFilterType;
+import com.gregtechceu.gtceu.api.block.ICleanroomFilterType;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.ICleanroomReceiver;
 import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
@@ -128,7 +128,7 @@ public class CleanroomMachine extends WorkableElectricMultiblockMachine
     public void onStructureFormed() {
         super.onStructureFormed();
         initializeAbilities();
-        IFilterType filterType = getMultiblockState().getMatchContext().get("FilterType");
+        ICleanroomFilterType filterType = getMultiblockState().getMatchContext().get("FilterType");
         if (filterType != null) {
             this.cleanroomType = filterType.getCleanroomType();
         } else {
