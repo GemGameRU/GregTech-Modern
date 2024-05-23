@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.addon;
 
 import com.gregtechceu.gtceu.integration.kjs.KJSRecipeKeyEvent;
-import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
+import com.gregtechceu.gtceu.api.block.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.worldgen.bedrockfluid.BedrockFluidDefinition;
 import com.gregtechceu.gtceu.data.block.GTOres;
