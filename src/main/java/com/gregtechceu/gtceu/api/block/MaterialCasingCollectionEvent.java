@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.api.addon.events;
+package com.gregtechceu.gtceu.api.block;
 
 import com.gregtechceu.gtceu.api.material.material.Material;
 
