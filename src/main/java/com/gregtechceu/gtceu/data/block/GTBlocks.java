@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.data.block;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.block.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.block.*;
 import com.gregtechceu.gtceu.api.item.*;
@@ -544,7 +544,7 @@ public class GTBlocks {
         builder.put(GTMaterials.HastelloyC276, CASING_SHOCK_PROOF);
 
         MaterialCasingCollectionEvent event = new MaterialCasingCollectionEvent(builder);
-        AddonFinder.getAddons().forEach(addon -> addon.collectMaterialCasings(event));
+        GTAddonFinder.getAddons().forEach(addon -> addon.collectMaterialCasings(event));
 
         MATERIALS_TO_CASINGS = builder.build();
     }

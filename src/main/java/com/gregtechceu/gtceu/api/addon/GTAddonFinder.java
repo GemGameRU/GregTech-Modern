@@ -11,7 +11,7 @@ import org.objectweb.asm.Type;
 import java.lang.reflect.Constructor;
 import java.util.*;
 
-public class AddonFinder {
+public class GTAddonFinder {
 
     // Stored Variables
     private static final Logger LOGGER = LogManager.getLogger();

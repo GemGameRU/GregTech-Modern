@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.worldgen;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.integration.kjs.GTRegistryInfo;
 
@@ -58,7 +58,7 @@ public enum WorldGenLayers implements IWorldGenLayer, StringRepresentable {
     }
 
     public static void registerAll() {
-        AddonFinder.getAddons().forEach(IGTAddon::registerWorldgenLayers);
+        GTAddonFinder.getAddons().forEach(IGTAddon::registerWorldgenLayers);
         if (GTCEu.isKubeJSLoaded()) {
             GTRegistryInfo.registerFor(GTRegistryInfo.WORLD_GEN_LAYER.registryKey);
         }

@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.material.material.registry;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.registry.GTRegistry;
@@ -22,7 +22,7 @@ public abstract class MaterialRegistry extends GTRegistry.String<Material> {
 
     public MaterialRegistry(java.lang.String modId) {
         super(new ResourceLocation(modId, "material"));
-        IGTAddon addon = AddonFinder.getAddon(modId);
+        IGTAddon addon = GTAddonFinder.getAddon(modId);
         this.registrate = addon != null ? addon.getRegistrate() :
                 GTCEu.MOD_ID.equals(modId) ? GTRegistration.REGISTRATE : GTRegistrate.create(modId);
     }

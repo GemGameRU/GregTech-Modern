@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration.kjs.recipe.components;
 
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.integration.kjs.KJSRecipeKeyEvent;
 import com.gregtechceu.gtceu.api.capability.recipe.*;
 import com.gregtechceu.gtceu.api.recipe.condition.RecipeCondition;
@@ -251,7 +251,7 @@ public class GTRecipeComponents {
         VALID_CAPS.put(GTRecipeCapabilities.CWU, Pair.of(CWU_IN, CWU_OUT));
 
         KJSRecipeKeyEvent event = new KJSRecipeKeyEvent();
-        AddonFinder.getAddons().forEach(addon -> addon.registerRecipeKeys(event));
+        GTAddonFinder.getAddons().forEach(addon -> addon.registerRecipeKeys(event));
         VALID_CAPS.putAll(event.getRegisteredKeys());
     }
 

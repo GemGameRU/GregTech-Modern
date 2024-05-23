@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.data.recipe;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.data.recipe.configurable.RecipeAddition;
 import com.gregtechceu.gtceu.data.recipe.configurable.RecipeRemoval;
 import com.gregtechceu.gtceu.data.recipe.generated.*;
@@ -101,7 +101,7 @@ public class GTRecipes {
             CreateRecipeLoader.init(consumer);
         }
 
-        AddonFinder.getAddons().forEach(addon -> addon.addRecipes(consumer));
+        GTAddonFinder.getAddons().forEach(addon -> addon.addRecipes(consumer));
     }
 
     /*
@@ -113,6 +113,6 @@ public class GTRecipes {
         RecipeRemoval.init(consumer);
 
         RECIPE_FILTERS.clear();
-        AddonFinder.getAddons().forEach(addon -> addon.removeRecipes(consumer.andThen(RECIPE_FILTERS::add)));
+        GTAddonFinder.getAddons().forEach(addon -> addon.removeRecipes(consumer.andThen(RECIPE_FILTERS::add)));
     }
 }

@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration;
 
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.material.ChemicalHelper;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
@@ -164,14 +164,14 @@ public class GTOreVeinWidget extends WidgetGroup {
         if (GTRegistries.ORE_VEINS.values().isEmpty()) {
             GTRegistries.ORE_VEINS.unfreeze();
             GTOres.init();
-            AddonFinder.getAddons().forEach(IGTAddon::registerOreVeins);
+            GTAddonFinder.getAddons().forEach(IGTAddon::registerOreVeins);
             OreDataLoader.buildVeinGenerator();
             GTRegistries.ORE_VEINS.freeze();
         }
         if (GTRegistries.BEDROCK_FLUID_DEFINITIONS.values().isEmpty()) {
             GTRegistries.BEDROCK_FLUID_DEFINITIONS.unfreeze();
             GTBedrockFluids.init();
-            AddonFinder.getAddons().forEach(IGTAddon::registerFluidVeins);
+            GTAddonFinder.getAddons().forEach(IGTAddon::registerFluidVeins);
             GTRegistries.BEDROCK_FLUID_DEFINITIONS.freeze();
         }
     }

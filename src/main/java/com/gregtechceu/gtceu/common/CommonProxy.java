@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.common;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.addon.AddonFinder;
+import com.gregtechceu.gtceu.api.addon.GTAddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.block.IMachineBlock;
 import com.gregtechceu.gtceu.api.capability.forge.GTCapability;
@@ -165,7 +165,7 @@ public class CommonProxy {
         GTDataComponents.DATA_COMPONENTS.register(modBus);
         GTArmorMaterials.ARMOR_MATERIALS.register(modBus);
         GTItems.init();
-        AddonFinder.getAddons().forEach(IGTAddon::initializeAddon);
+        GTAddonFinder.getAddons().forEach(IGTAddon::initializeAddon);
         GTOreVeinWidget.init();
         GTIngredientTypes.INGREDIENT_TYPES.register(modBus);
 
