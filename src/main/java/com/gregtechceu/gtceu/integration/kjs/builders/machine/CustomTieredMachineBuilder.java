@@ -1,8 +1,8 @@
 package com.gregtechceu.gtceu.integration.kjs.builders.machine;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -59,6 +59,6 @@ public class CustomTieredMachineBuilder extends SimpleMachineBuilder {
             }
         }
         return MachineFunctionPresets.builder(name, builders, CustomTieredMachineBuilder.class,
-                MachineDefinition::createDefinition, MetaMachineBlock::new, MetaMachineBlockEntity::createBlockEntity);
+                MachineDefinition::createDefinition, MachineBlock::new, MachineBlockEntity::createBlockEntity);
     }
 }

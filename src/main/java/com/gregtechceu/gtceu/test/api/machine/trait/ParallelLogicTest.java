@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.test.api.machine.trait;
 
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
@@ -25,7 +25,7 @@ public class ParallelLogicTest {
     @GameTest(template = "gtceu:ebf")
     public void getMaxRecipeMultiplier_FluidLimitTest(GameTestHelper helper) {
         BlockEntity holder = helper.getBlockEntity(new BlockPos(1, 1, 0));
-        if (!(holder instanceof MetaMachineBlockEntity atte)) {
+        if (!(holder instanceof MachineBlockEntity atte)) {
             helper.fail("wrong block at relative pos [1,1,0]!");
             return;
         }
@@ -62,7 +62,7 @@ public class ParallelLogicTest {
     @GameTest(template = "gtceu:ebf")
     public void getMaxRecipeMultiplier_LimitFailureTest(GameTestHelper helper) {
         BlockEntity holder = helper.getBlockEntity(new BlockPos(1, 1, 0));
-        if (!(holder instanceof MetaMachineBlockEntity atte)) {
+        if (!(holder instanceof MachineBlockEntity atte)) {
             helper.fail("wrong block at relative pos [1,1,0]!");
             return;
         }
@@ -99,7 +99,7 @@ public class ParallelLogicTest {
     @GameTest(template = "gtceu:ebf")
     public void getMaxRecipeMultiplier_ItemFailureTest(GameTestHelper helper) {
         BlockEntity holder = helper.getBlockEntity(new BlockPos(1, 1, 0));
-        if (!(holder instanceof MetaMachineBlockEntity atte)) {
+        if (!(holder instanceof MachineBlockEntity atte)) {
             helper.fail("wrong block at relative pos [1,1,0]!");
             return;
         }

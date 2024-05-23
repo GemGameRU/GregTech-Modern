@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.blockentity;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -66,7 +66,7 @@ public class KineticMachineBlockEntity extends KineticBlockEntity implements IMa
     public static void onBlockEntityRegister(BlockEntityType blockEntityType,
                                              NonNullSupplier<BiFunction<MaterialManager, KineticMachineBlockEntity, BlockEntityInstance<? super KineticMachineBlockEntity>>> instanceFactory,
                                              boolean renderNormally) {
-        MetaMachineBlockEntity.onBlockEntityRegister(blockEntityType);
+        MachineBlockEntity.onBlockEntityRegister(blockEntityType);
         if (instanceFactory != null && LDLib.isClient()) {
             CommonProxy.modBus.addListener(FMLClientSetupEvent.class,
                     $ -> InstancedRenderRegistry.configure(blockEntityType)

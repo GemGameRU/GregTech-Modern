@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.block;
 
 import com.gregtechceu.gtceu.api.block.BlockProperties;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.common.blockentity.KineticMachineBlockEntity;
@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
  * @date 2023/3/31
  * @implNote KineticMachineBlock
  */
-public class KineticMachineBlock extends MetaMachineBlock implements IRotate {
+public class KineticMachineBlock extends MachineBlock implements IRotate {
 
     public KineticMachineBlock(Properties properties, KineticMachineDefinition definition) {
         super(properties, definition);

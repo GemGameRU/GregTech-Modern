@@ -3,8 +3,8 @@ package com.gregtechceu.gtceu.integration.kjs.builders.machine;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.RotationState;
-import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
-import com.gregtechceu.gtceu.api.blockentity.MetaMachineBlockEntity;
+import com.gregtechceu.gtceu.api.block.MachineBlock;
+import com.gregtechceu.gtceu.api.blockentity.MachineBlockEntity;
 import com.gregtechceu.gtceu.api.item.MetaMachineItem;
 import com.gregtechceu.gtceu.api.machine.*;
 import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
@@ -36,7 +36,7 @@ public class SimpleMachineBuilder extends MachineBuilder<MachineDefinition> {
 
     public SimpleMachineBuilder(String name, Function<IMachineBlockEntity, MetaMachine> machineConstructor) {
         super(GTRegistration.REGISTRATE, name, MachineDefinition::createDefinition, machineConstructor,
-                MetaMachineBlock::new, MetaMachineItem::new, MetaMachineBlockEntity::createBlockEntity);
+                MachineBlock::new, MetaMachineItem::new, MachineBlockEntity::createBlockEntity);
         this.tankScalingFunction = GTMachines.defaultTankSizeFunction;
     }
 
@@ -84,6 +84,6 @@ public class SimpleMachineBuilder extends MachineBuilder<MachineDefinition> {
         SimpleMachineBuilder[] builders = simpleMachines(name, SimpleMachineBuilder::simple,
                 MachineFunctionPresets.mapTierArray(args));
         return MachineFunctionPresets.builder(name, builders, SimpleMachineBuilder.class,
-                MachineDefinition::createDefinition, MetaMachineBlock::new, MetaMachineBlockEntity::createBlockEntity);
+                MachineDefinition::createDefinition, MachineBlock::new, MachineBlockEntity::createBlockEntity);
     }
 }
