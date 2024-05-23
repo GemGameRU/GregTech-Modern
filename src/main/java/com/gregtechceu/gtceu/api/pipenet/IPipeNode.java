@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.block.PipeBlock;
 import com.gregtechceu.gtceu.api.blockentity.IPaintable;
 import com.gregtechceu.gtceu.api.blockentity.ITickSubscription;
 import com.gregtechceu.gtceu.api.blockentity.PipeBlockEntity;
-import com.gregtechceu.gtceu.api.capability.ICoverable;
+import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.material.material.Material;
 
 import com.lowdragmc.lowdraglib.LDLib;
@@ -26,7 +26,7 @@ public interface IPipeNode<PipeType extends Enum<PipeType> & IPipeType<NodeDataT
     /**
      * Get Cover Container.
      */
-    ICoverable getCoverContainer();
+    ICoverableBlock getCoverContainer();
 
     /**
      * If tube is set to block connection from the specific side

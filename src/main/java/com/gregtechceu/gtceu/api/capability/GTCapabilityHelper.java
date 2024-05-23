@@ -42,7 +42,7 @@ public class GTCapabilityHelper {
     }
 
     @Nullable
-    public static ICoverable getCoverable(Level level, BlockPos pos, @Nullable Direction side) {
+    public static ICoverableBlock getCoverable(Level level, BlockPos pos, @Nullable Direction side) {
         return getBlockEntityCapability(GTCapability.CAPABILITY_COVERABLE, level, pos, side);
     }
 

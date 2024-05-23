@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
  * @date 2023/3/27
  * @implNote AppearanceBlock
  */
-public class AppearanceBlock extends Block implements IAppearance {
+public class AppearanceBlock extends Block implements IAppearanceBlock {
 
     public AppearanceBlock(Properties properties) {
         super(properties);

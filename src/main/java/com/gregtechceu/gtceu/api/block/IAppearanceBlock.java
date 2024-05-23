@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  * @date 2023/3/27
  * @implNote IAppearanceBlock
  */
-public interface IAppearance {
+public interface IAppearanceBlock {
 
     /**
      * get Appearance. same as IForgeBlock.getAppearance() / IFabricBlock.getAppearance()
