@@ -2,8 +2,8 @@ package com.gregtechceu.gtceu.api.material.material.properties;
 
 import com.gregtechceu.gtceu.api.capability.IPropertyFluidFilter;
 import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.GTFluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.GTFluidAttributes;
 
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;
 

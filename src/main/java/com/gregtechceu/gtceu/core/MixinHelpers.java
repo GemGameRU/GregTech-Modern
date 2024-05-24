@@ -2,8 +2,8 @@ package com.gregtechceu.gtceu.core;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.fluid.store.FluidStorage;
-import com.gregtechceu.gtceu.api.fluid.store.FluidStorageKey;
+import com.gregtechceu.gtceu.api.fluid.FluidStorage;
+import com.gregtechceu.gtceu.api.fluid.FluidStorageKey;
 import com.gregtechceu.gtceu.api.material.ChemicalHelper;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.material.material.properties.FluidProperty;

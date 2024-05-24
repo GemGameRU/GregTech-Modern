@@ -1,8 +1,5 @@
 package com.gregtechceu.gtceu.api.fluid;
 
-import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
-
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

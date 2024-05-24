@@ -1,7 +1,4 @@
-package com.gregtechceu.gtceu.api.fluid.forge;
-
-import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.GTFluid;
+package com.gregtechceu.gtceu.api.fluid;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.item.Item;

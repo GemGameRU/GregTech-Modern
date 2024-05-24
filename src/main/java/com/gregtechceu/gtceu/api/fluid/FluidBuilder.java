@@ -1,8 +1,5 @@
 package com.gregtechceu.gtceu.api.fluid;
 
-import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.store.FluidStorageKey;
-import com.gregtechceu.gtceu.api.fluid.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.material.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.material.material.properties.BlastProperty;

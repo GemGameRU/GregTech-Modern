@@ -1,6 +1,5 @@
-package com.gregtechceu.gtceu.api.fluid.store;
+package com.gregtechceu.gtceu.api.fluid;
 
-import com.gregtechceu.gtceu.api.fluid.FluidState;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.material.material.info.MaterialIconType;
 
