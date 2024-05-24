@@ -1,8 +1,8 @@
 package com.gregtechceu.gtceu.api.capability;
 
 import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
+import com.gregtechceu.gtceu.api.fluid.GTFluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.IAttributedFluid;
 import com.gregtechceu.gtceu.utils.GTUtil;
 
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;

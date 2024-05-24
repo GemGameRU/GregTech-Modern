@@ -1,7 +1,6 @@
-package com.gregtechceu.gtceu.api.fluid.store;
+package com.gregtechceu.gtceu.api.fluid;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.fluid.FluidBuilder;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 

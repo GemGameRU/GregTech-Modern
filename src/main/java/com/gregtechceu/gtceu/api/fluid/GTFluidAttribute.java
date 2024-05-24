@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.api.fluid.attribute;
+package com.gregtechceu.gtceu.api.fluid;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

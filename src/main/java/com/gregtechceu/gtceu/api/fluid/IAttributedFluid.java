@@ -1,6 +1,4 @@
-package com.gregtechceu.gtceu.api.fluid.attribute;
-
-import com.gregtechceu.gtceu.api.fluid.FluidState;
+package com.gregtechceu.gtceu.api.fluid;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;

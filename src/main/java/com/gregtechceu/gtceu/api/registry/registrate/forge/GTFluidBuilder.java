@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.registry.registrate.forge;
 
 import com.gregtechceu.gtceu.api.fluid.FluidState;
 import com.gregtechceu.gtceu.api.fluid.GTFluid;
-import com.gregtechceu.gtceu.api.fluid.forge.GTFluidForge;
+import com.gregtechceu.gtceu.api.fluid.GTFluidForge;
 import com.gregtechceu.gtceu.api.item.forge.GTBucketItem;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.registry.registrate.IGTFluidBuilder;
