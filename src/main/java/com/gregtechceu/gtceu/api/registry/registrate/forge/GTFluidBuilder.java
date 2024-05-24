@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.registry.registrate.forge;
 
 import com.gregtechceu.gtceu.api.fluid.FluidState;
 import com.gregtechceu.gtceu.api.fluid.GTFluid;
-import com.gregtechceu.gtceu.api.fluid.forge.GTFluidImpl;
+import com.gregtechceu.gtceu.api.fluid.forge.GTFluidForge;
 import com.gregtechceu.gtceu.api.item.forge.GTBucketItem;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.registry.registrate.IGTFluidBuilder;
@@ -66,7 +66,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Accessors(chain = true, fluent = true)
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowing, P, GTFluidBuilder<P>>
+public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidForge.Flowing, P, GTFluidBuilder<P>>
                            implements IGTFluidBuilder {
 
     @Setter
@@ -154,7 +154,7 @@ public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowin
         return this;
     }
 
-    protected void registerRenderType(GTFluidImpl.Flowing entry) {
+    protected void registerRenderType(GTFluidForge.Flowing entry) {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             OneTimeEventReceiver.addModListener(getOwner(), FMLClientSetupEvent.class, $ -> {
                 if (this.layer != null) {
@@ -192,11 +192,11 @@ public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowin
         return block((fluidSupplier, p) -> new LiquidBlock(fluidSupplier.get(), p));
     }
 
-    public <B extends LiquidBlock> BlockBuilder<B, GTFluidBuilder<P>> block(NonNullBiFunction<NonNullSupplier<GTFluidImpl.Flowing>, BlockBehaviour.Properties, ? extends B> factory) {
+    public <B extends LiquidBlock> BlockBuilder<B, GTFluidBuilder<P>> block(NonNullBiFunction<NonNullSupplier<GTFluidForge.Flowing>, BlockBehaviour.Properties, ? extends B> factory) {
         if (this.defaultBlock == Boolean.FALSE) {
             throw new IllegalStateException("Only one call to block/noBlock per builder allowed");
         }
-        NonNullSupplier<GTFluidImpl.Flowing> supplier = asSupplier();
+        NonNullSupplier<GTFluidForge.Flowing> supplier = asSupplier();
 
         return getOwner().<B, GTFluidBuilder<P>>block(this, sourceName, p -> factory.apply(supplier, p))
                 .properties(p -> BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable())
@@ -287,8 +287,8 @@ public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowin
     }
 
     @Override
-    protected GTFluidImpl.Flowing createEntry() {
-        return new GTFluidImpl.Flowing(this.state, () -> this.source.get(), () -> this.get().get(),
+    protected GTFluidForge.Flowing createEntry() {
+        return new GTFluidForge.Flowing(this.state, () -> this.source.get(), () -> this.get().get(),
                 (() -> this.block != null ? this.block.get() : null),
                 (() -> this.bucket != null ? this.bucket.get() : null), this.burnTime, this.fluidType);
     }
@@ -322,7 +322,7 @@ public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowin
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
-    public RegistryEntry<Fluid, GTFluidImpl.Flowing> register() {
+    public RegistryEntry<Fluid, GTFluidForge.Flowing> register() {
         // Check the fluid has a type.
         if (this.fluidType != null) {
             // Register the type.
@@ -334,7 +334,7 @@ public class GTFluidBuilder<P> extends AbstractBuilder<Fluid, GTFluidImpl.Flowin
         }
 
         if (defaultSource == Boolean.TRUE) {
-            source(() -> new GTFluidImpl.Source(this.state, () -> this.source.get(), () -> this.get().get(),
+            source(() -> new GTFluidForge.Source(this.state, () -> this.source.get(), () -> this.get().get(),
                     (() -> this.block != null ? this.block.get() : null),
                     (() -> this.bucket != null ? this.bucket.get() : null), this.burnTime, this.fluidType));
         }

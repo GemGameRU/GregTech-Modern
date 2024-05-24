@@ -19,13 +19,13 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public abstract class GTFluidImpl extends GTFluid implements IFluidExtension {
+public abstract class GTFluidForge extends GTFluid implements IFluidExtension {
 
     private final Supplier<FluidType> fluidType;
 
-    public GTFluidImpl(@NotNull FluidState state, Supplier<? extends Fluid> stillFluid,
-                       Supplier<? extends Fluid> flowingFluid, Supplier<? extends LiquidBlock> block,
-                       Supplier<? extends Item> bucket, int burnTime, Supplier<FluidType> fluidType) {
+    public GTFluidForge(@NotNull FluidState state, Supplier<? extends Fluid> stillFluid,
+                        Supplier<? extends Fluid> flowingFluid, Supplier<? extends LiquidBlock> block,
+                        Supplier<? extends Item> bucket, int burnTime, Supplier<FluidType> fluidType) {
         super(state, stillFluid, flowingFluid, block, bucket, burnTime);
         this.fluidType = fluidType;
     }
@@ -35,7 +35,7 @@ public abstract class GTFluidImpl extends GTFluid implements IFluidExtension {
         return fluidType.get();
     }
 
-    public static class Source extends GTFluidImpl {
+    public static class Source extends GTFluidForge {
 
         public Source(@NotNull FluidState state, Supplier<? extends Fluid> stillFluid,
                       Supplier<? extends Fluid> flowingFluid, Supplier<? extends LiquidBlock> block,
@@ -54,7 +54,7 @@ public abstract class GTFluidImpl extends GTFluid implements IFluidExtension {
         }
     }
 
-    public static class Flowing extends GTFluidImpl {
+    public static class Flowing extends GTFluidForge {
 
         public Flowing(@NotNull FluidState state, Supplier<? extends Fluid> stillFluid,
                        Supplier<? extends Fluid> flowingFluid, Supplier<? extends LiquidBlock> block,
