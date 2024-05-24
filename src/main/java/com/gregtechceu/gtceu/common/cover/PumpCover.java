@@ -8,8 +8,8 @@ import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.filter.FilterHandler;
-import com.gregtechceu.gtceu.api.cover.filter.FilterHandlers;
-import com.gregtechceu.gtceu.api.cover.filter.FluidFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFilterHandler;
+import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.NumberInputWidget;
@@ -93,7 +93,7 @@ public class PumpCover extends CoverBehavior implements IUICover, IControllable 
 
     @Persisted
     @DescSynced
-    protected final FilterHandler<FluidStack, FluidFilter> filterHandler;
+    protected final FilterHandler<FluidStack, IFluidFilter> filterHandler;
     protected final ConditionalSubscriptionHandler subscriptionHandler;
     private NumberInputWidget<Integer> transferRateWidget;
 
@@ -112,7 +112,7 @@ public class PumpCover extends CoverBehavior implements IUICover, IControllable 
         this.milliBucketsLeftToTransferLastSecond = currentMilliBucketsPerTick * 20;
 
         subscriptionHandler = new ConditionalSubscriptionHandler(coverHolder, this::update, this::isSubscriptionActive);
-        filterHandler = FilterHandlers.fluid(this)
+        filterHandler = IFilterHandler.fluid(this)
                 .onFilterLoaded(f -> configureFilter())
                 .onFilterUpdated(f -> configureFilter())
                 .onFilterRemoved(f -> configureFilter());

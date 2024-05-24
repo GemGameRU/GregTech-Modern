@@ -27,7 +27,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class FilterHandler<T, F extends Filter<T, F>> implements IEnhancedManaged {
+public abstract class FilterHandler<T, F extends IFilter<T, F>> implements IEnhancedManaged {
 
     private final IEnhancedManaged container;
 

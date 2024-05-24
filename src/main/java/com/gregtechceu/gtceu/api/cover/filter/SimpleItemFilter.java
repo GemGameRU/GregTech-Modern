@@ -32,7 +32,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SimpleItemFilter implements ItemFilter {
+public class SimpleItemFilter implements IItemFilter {
 
     public static final Codec<SimpleItemFilter> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.BOOL.fieldOf("is_blacklist").forGetter(val -> val.isBlackList),
@@ -46,8 +46,8 @@ public class SimpleItemFilter implements ItemFilter {
     @Getter
     protected ItemStack[] matches = new ItemStack[9];
 
-    protected Consumer<ItemFilter> itemWriter = filter -> {};
-    protected Consumer<ItemFilter> onUpdated = filter -> itemWriter.accept(filter);
+    protected Consumer<IItemFilter> itemWriter = filter -> {};
+    protected Consumer<IItemFilter> onUpdated = filter -> itemWriter.accept(filter);
 
     @Getter
     protected int maxStackSize;
@@ -69,7 +69,7 @@ public class SimpleItemFilter implements ItemFilter {
     }
 
     @Override
-    public void setOnUpdated(Consumer<ItemFilter> onUpdated) {
+    public void setOnUpdated(Consumer<IItemFilter> onUpdated) {
         this.onUpdated = filter -> {
             this.itemWriter.accept(filter);
             onUpdated.accept(filter);

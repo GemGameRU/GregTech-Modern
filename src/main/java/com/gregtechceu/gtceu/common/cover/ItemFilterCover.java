@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.common.cover.data.ItemFilterMode;
 
@@ -35,7 +35,7 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
     public static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(ItemFilterCover.class,
             CoverBehavior.MANAGED_FIELD_HOLDER);
 
-    protected ItemFilter itemFilter;
+    protected IItemFilter itemFilter;
     @Persisted
     @DescSynced
     @Getter
@@ -45,9 +45,9 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
         super(definition, coverHolder, attachedSide);
     }
 
-    public ItemFilter getItemFilter() {
+    public IItemFilter getItemFilter() {
         if (itemFilter == null) {
-            itemFilter = ItemFilter.loadFilter(attachItem);
+            itemFilter = IItemFilter.loadFilter(attachItem);
         }
         return itemFilter;
     }

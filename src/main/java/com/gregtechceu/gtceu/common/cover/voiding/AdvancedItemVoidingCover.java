@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.cover.voiding;
 
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.cover.filter.SimpleItemFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
@@ -91,7 +91,7 @@ public class AdvancedItemVoidingCover extends ItemVoidingCover {
         if (!filterHandler.isFilterPresent())
             return globalVoidingLimit;
 
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         return filter.isBlackList() ? globalVoidingLimit : filter.testItemCount(itemStack);
     }
 

@@ -8,8 +8,8 @@ import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.filter.FilterHandler;
-import com.gregtechceu.gtceu.api.cover.filter.FilterHandlers;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFilterHandler;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
@@ -92,7 +92,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
     @Persisted
     @DescSynced
     @Getter
-    protected final FilterHandler<ItemStack, ItemFilter> filterHandler;
+    protected final FilterHandler<ItemStack, IItemFilter> filterHandler;
     protected final ConditionalSubscriptionHandler subscriptionHandler;
 
     public ConveyorCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide, int tier) {
@@ -105,7 +105,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
         this.distributionMode = DistributionMode.INSERT_FIRST;
 
         subscriptionHandler = new ConditionalSubscriptionHandler(coverHolder, this::update, this::isSubscriptionActive);
-        filterHandler = FilterHandlers.item(this)
+        filterHandler = IFilterHandler.item(this)
                 .onFilterLoaded(f -> configureFilter())
                 .onFilterUpdated(f -> configureFilter())
                 .onFilterRemoved(f -> configureFilter());
@@ -227,7 +227,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
 
     protected int moveInventoryItems(IItemHandler sourceInventory, IItemHandler targetInventory,
                                      int maxTransferAmount) {
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         int itemsLeftToTransfer = maxTransferAmount;
 
         for (int srcIndex = 0; srcIndex < sourceInventory.getSlots(); srcIndex++) {
@@ -315,7 +315,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
 
     protected int moveInventoryItems(IItemHandler sourceInventory, IItemHandler targetInventory,
                                      Map<ItemStack, GroupItemInfo> itemInfos, int maxTransferAmount) {
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         int itemsLeftToTransfer = maxTransferAmount;
 
         for (int i = 0; i < sourceInventory.getSlots(); i++) {
@@ -358,7 +358,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
 
     @NotNull
     protected Map<ItemStack, TypeItemInfo> countInventoryItemsByType(@NotNull IItemHandler inventory) {
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         Map<ItemStack, TypeItemInfo> result = new Object2ObjectOpenCustomHashMap<>(
                 ItemStackHashStrategy.comparingAllButCount());
 
@@ -379,7 +379,7 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
 
     @NotNull
     protected Map<ItemStack, GroupItemInfo> countInventoryItemsByMatchSlot(@NotNull IItemHandler inventory) {
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         Map<ItemStack, GroupItemInfo> result = new Object2ObjectOpenCustomHashMap<>(
                 ItemStackHashStrategy.comparingAllButCount());
 

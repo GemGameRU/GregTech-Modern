@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.cover;
 
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
-import com.gregtechceu.gtceu.api.cover.filter.FluidFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
 import com.gregtechceu.gtceu.api.cover.filter.SimpleFluidFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
@@ -188,7 +188,7 @@ public class FluidRegulatorCover extends PumpCover {
         if (!filterHandler.isFilterPresent())
             return globalTransferSizeMillibuckets;
 
-        FluidFilter filter = filterHandler.getFilter();
+        IFluidFilter filter = filterHandler.getFilter();
         return (filter.supportsAmounts() ? filter.testFluidAmount(fluidStack) : globalTransferSizeMillibuckets) *
                 MILLIBUCKET_SIZE;
     }

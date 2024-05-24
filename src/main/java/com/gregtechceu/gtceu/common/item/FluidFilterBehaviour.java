@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.common.item;
 
-import com.gregtechceu.gtceu.api.cover.filter.FluidFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;
@@ -20,12 +20,12 @@ import java.util.function.Function;
  * @date 2023/3/13
  * @implNote FluidFilterBehaviour
  */
-public record FluidFilterBehaviour(Function<ItemStack, FluidFilter> filterCreator) implements IItemUIFactory {
+public record FluidFilterBehaviour(Function<ItemStack, IFluidFilter> filterCreator) implements IItemUIFactory {
 
     @Override
     public void onAttached(Item item) {
         IItemUIFactory.super.onAttached(item);
-        FluidFilter.FILTERS.put(item, filterCreator);
+        IFluidFilter.FILTERS.put(item, filterCreator);
     }
 
     @Override
@@ -34,7 +34,7 @@ public record FluidFilterBehaviour(Function<ItemStack, FluidFilter> filterCreato
         return new ModularUI(176, 157, holder, entityPlayer)
                 .background(GuiTextures.BACKGROUND)
                 .widget(new LabelWidget(5, 3, held.getDescriptionId()))
-                .widget(FluidFilter.loadFilter(held).openConfigurator((176 - 80) / 2, (60 - 55) / 2 + 15))
+                .widget(IFluidFilter.loadFilter(held).openConfigurator((176 - 80) / 2, (60 - 55) / 2 + 15))
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 75, true));
     }
 }

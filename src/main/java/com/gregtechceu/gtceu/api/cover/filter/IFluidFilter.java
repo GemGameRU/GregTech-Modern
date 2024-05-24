@@ -19,11 +19,11 @@ import java.util.function.Function;
  * @date 2023/3/14
  * @implNote FluidFilter
  */
-public interface FluidFilter extends Filter<FluidStack, FluidFilter> {
+public interface IFluidFilter extends IFilter<FluidStack, IFluidFilter> {
 
-    Map<ItemLike, Function<ItemStack, FluidFilter>> FILTERS = new HashMap<>();
+    Map<ItemLike, Function<ItemStack, IFluidFilter>> FILTERS = new HashMap<>();
 
-    static FluidFilter loadFilter(ItemStack itemStack) {
+    static IFluidFilter loadFilter(ItemStack itemStack) {
         return FILTERS.get(itemStack.getItem()).apply(itemStack);
     }
 
@@ -46,7 +46,7 @@ public interface FluidFilter extends Filter<FluidStack, FluidFilter> {
      * An empty fluid filter that allows all fluids.<br>
      * ONLY TO BE USED FOR FLUID MATCHING! All other functionality will throw an exception.
      */
-    FluidFilter EMPTY = new FluidFilter() {
+    IFluidFilter EMPTY = new IFluidFilter() {
 
         @Override
         public boolean test(FluidStack fluidStack) {
@@ -69,7 +69,7 @@ public interface FluidFilter extends Filter<FluidStack, FluidFilter> {
         }
 
         @Override
-        public void setOnUpdated(Consumer<FluidFilter> onUpdated) {
+        public void setOnUpdated(Consumer<IFluidFilter> onUpdated) {
             throw new NotImplementedException("Not available for empty fluid filter");
         }
     };

@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.common.cover.ConveyorCover;
@@ -64,7 +64,7 @@ public class ItemVoidingCover extends ConveyorCover implements IUICover, IContro
     }
 
     void voidAny(IItemHandler itemTransfer) {
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
 
         for (int slot = 0; slot < itemTransfer.getSlots(); slot++) {
             ItemStack sourceStack = itemTransfer.extractItem(slot, Integer.MAX_VALUE, true);

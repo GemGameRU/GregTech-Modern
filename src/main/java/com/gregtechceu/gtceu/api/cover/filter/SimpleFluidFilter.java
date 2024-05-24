@@ -33,7 +33,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SimpleFluidFilter implements FluidFilter {
+public class SimpleFluidFilter implements IFluidFilter {
 
     public static final Codec<SimpleFluidFilter> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.BOOL.fieldOf("is_blacklist").forGetter(val -> val.isBlackList),
@@ -47,8 +47,8 @@ public class SimpleFluidFilter implements FluidFilter {
     @Getter
     protected FluidStack[] matches = new FluidStack[9];
 
-    protected Consumer<FluidFilter> itemWriter = filter -> {};
-    protected Consumer<FluidFilter> onUpdated = filter -> itemWriter.accept(filter);
+    protected Consumer<IFluidFilter> itemWriter = filter -> {};
+    protected Consumer<IFluidFilter> onUpdated = filter -> itemWriter.accept(filter);
 
     @Getter
     protected int maxStackSize = 1;
@@ -71,7 +71,7 @@ public class SimpleFluidFilter implements FluidFilter {
     }
 
     @Override
-    public void setOnUpdated(Consumer<FluidFilter> onUpdated) {
+    public void setOnUpdated(Consumer<IFluidFilter> onUpdated) {
         this.onUpdated = filter -> {
             this.itemWriter.accept(filter);
             onUpdated.accept(filter);

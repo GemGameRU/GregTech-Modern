@@ -18,11 +18,11 @@ import java.util.function.Function;
  * @date 2023/3/13
  * @implNote ItemFilter
  */
-public interface ItemFilter extends Filter<ItemStack, ItemFilter> {
+public interface IItemFilter extends IFilter<ItemStack, IItemFilter> {
 
-    Map<ItemLike, Function<ItemStack, ItemFilter>> FILTERS = new HashMap<>();
+    Map<ItemLike, Function<ItemStack, IItemFilter>> FILTERS = new HashMap<>();
 
-    static ItemFilter loadFilter(ItemStack itemStack) {
+    static IItemFilter loadFilter(ItemStack itemStack) {
         return FILTERS.get(itemStack.getItem()).apply(itemStack);
     }
 
@@ -45,7 +45,7 @@ public interface ItemFilter extends Filter<ItemStack, ItemFilter> {
      * An empty item filter that allows all items.<br>
      * ONLY TO BE USED FOR ITEM MATCHING! All other functionality will throw an exception.
      */
-    ItemFilter EMPTY = new ItemFilter() {
+    IItemFilter EMPTY = new IItemFilter() {
 
         @Override
         public int testItemCount(ItemStack itemStack) {
@@ -68,7 +68,7 @@ public interface ItemFilter extends Filter<ItemStack, ItemFilter> {
         }
 
         @Override
-        public void setOnUpdated(Consumer<ItemFilter> onUpdated) {
+        public void setOnUpdated(Consumer<IItemFilter> onUpdated) {
             throw new NotImplementedException("Not available for empty item filter");
         }
     };
