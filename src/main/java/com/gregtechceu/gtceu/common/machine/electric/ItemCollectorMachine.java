@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.common.machine.electric;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IWorkable;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
@@ -244,9 +244,9 @@ public class ItemCollectorMachine extends TieredEnergyMachine
     }
 
     public void moveItemsInRange() {
-        ItemFilter filter = null;
+        IItemFilter filter = null;
         if (!filterInventory.getStackInSlot(0).isEmpty())
-            filter = ItemFilter.loadFilter(filterInventory.getStackInSlot(0));
+            filter = IItemFilter.loadFilter(filterInventory.getStackInSlot(0));
         BlockPos centerPos = self().getPos().above();
 
         List<ItemEntity> itemEntities = getLevel().getEntitiesOfClass(ItemEntity.class, aabb);

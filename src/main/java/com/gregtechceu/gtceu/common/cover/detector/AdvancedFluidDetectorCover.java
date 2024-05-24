@@ -4,8 +4,8 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.filter.FilterHandler;
-import com.gregtechceu.gtceu.api.cover.filter.FilterHandlers;
-import com.gregtechceu.gtceu.api.cover.filter.FluidFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFilterHandler;
+import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.widget.LongInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
@@ -56,7 +56,7 @@ public class AdvancedFluidDetectorCover extends FluidDetectorCover implements IU
     @Persisted
     @DescSynced
     @Getter
-    protected final FilterHandler<FluidStack, FluidFilter> filterHandler;
+    protected final FilterHandler<FluidStack, IFluidFilter> filterHandler;
 
     public AdvancedFluidDetectorCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide) {
         super(definition, coverHolder, attachedSide);
@@ -64,7 +64,7 @@ public class AdvancedFluidDetectorCover extends FluidDetectorCover implements IU
         this.minValue = DEFAULT_MIN;
         this.maxValue = DEFAULT_MAX;
 
-        filterHandler = FilterHandlers.fluid(this);
+        filterHandler = IFilterHandler.fluid(this);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class AdvancedFluidDetectorCover extends FluidDetectorCover implements IU
         if (this.coverHolder.getOffsetTimer() % 20 != 0)
             return;
 
-        FluidFilter filter = filterHandler.getFilter();
+        IFluidFilter filter = filterHandler.getFilter();
         IFluidHandler fluidHandler = getFluidTransfer();
         if (fluidHandler == null)
             return;

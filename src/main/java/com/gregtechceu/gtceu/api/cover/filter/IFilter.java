@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  * @date 2023/3/14
  * @implNote Filter
  */
-public interface Filter<T, S extends Filter<T, S>> extends Predicate<T> {
+public interface IFilter<T, S extends IFilter<T, S>> extends Predicate<T> {
 
     WidgetGroup openConfigurator(int x, int y);
 

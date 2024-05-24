@@ -17,7 +17,7 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
  * @date 2023/3/13
  * @implNote TagFluidFilter
  */
-public class TagFluidFilter extends TagFilter<FluidStack, FluidFilter> implements FluidFilter {
+public class TagFluidFilter extends TagFilter<FluidStack, IFluidFilter> implements IFluidFilter {
 
     public static final Codec<TagFluidFilter> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.STRING.fieldOf("tag").forGetter(val -> val.oreDictFilterExpression))

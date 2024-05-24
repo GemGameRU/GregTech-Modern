@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * @date 2023/3/14
  * @implNote TagFilter
  */
-public abstract class TagFilter<T, S extends Filter<T, S>> implements Filter<T, S> {
+public abstract class TagFilter<T, S extends IFilter<T, S>> implements IFilter<T, S> {
 
     private static final Pattern DOUBLE_WILDCARD = Pattern.compile("\\*{2,}");
     private static final Pattern DOUBLE_AND = Pattern.compile("&{2,}");

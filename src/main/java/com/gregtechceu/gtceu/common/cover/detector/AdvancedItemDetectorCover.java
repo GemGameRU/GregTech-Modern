@@ -4,8 +4,8 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.filter.FilterHandler;
-import com.gregtechceu.gtceu.api.cover.filter.FilterHandlers;
-import com.gregtechceu.gtceu.api.cover.filter.ItemFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFilterHandler;
+import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
@@ -55,7 +55,7 @@ public class AdvancedItemDetectorCover extends ItemDetectorCover implements IUIC
     @Persisted
     @DescSynced
     @Getter
-    protected final FilterHandler<ItemStack, ItemFilter> filterHandler;
+    protected final FilterHandler<ItemStack, IItemFilter> filterHandler;
 
     public AdvancedItemDetectorCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide) {
         super(definition, coverHolder, attachedSide);
@@ -63,7 +63,7 @@ public class AdvancedItemDetectorCover extends ItemDetectorCover implements IUIC
         this.minValue = DEFAULT_MIN;
         this.maxValue = DEFAULT_MAX;
 
-        filterHandler = FilterHandlers.item(this);
+        filterHandler = IFilterHandler.item(this);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AdvancedItemDetectorCover extends ItemDetectorCover implements IUIC
         if (this.coverHolder.getOffsetTimer() % 20 != 0)
             return;
 
-        ItemFilter filter = filterHandler.getFilter();
+        IItemFilter filter = filterHandler.getFilter();
         IItemHandler itemTransfer = getItemTransfer();
         if (itemTransfer == null)
             return;

@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.cover.filter.FluidFilter;
+import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
 
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
@@ -25,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class FluidFilterCover extends CoverBehavior implements IUICover {
 
-    protected FluidFilter fluidFilter;
+    protected IFluidFilter fluidFilter;
 
     public FluidFilterCover(CoverDefinition definition, ICoverableBlock coverHolder, Direction attachedSide) {
         super(definition, coverHolder, attachedSide);
@@ -36,9 +36,9 @@ public class FluidFilterCover extends CoverBehavior implements IUICover {
         return FluidTransferHelper.getFluidTransfer(coverHolder.getLevel(), coverHolder.getPos(), attachedSide) != null;
     }
 
-    public FluidFilter getFluidFilter() {
+    public IFluidFilter getFluidFilter() {
         if (fluidFilter == null) {
-            fluidFilter = FluidFilter.loadFilter(attachItem);
+            fluidFilter = IFluidFilter.loadFilter(attachItem);
         }
         return fluidFilter;
     }
