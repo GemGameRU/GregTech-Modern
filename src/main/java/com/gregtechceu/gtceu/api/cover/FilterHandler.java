@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.cover;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
 
 import com.lowdragmc.lowdraglib.LDLib;
@@ -61,7 +61,7 @@ public abstract class FilterHandler<T, F extends IFilter<T, F>> implements IEnha
     public Widget createFilterSlotUI(int xPos, int yPos) {
         return new SlotWidget(getFilterSlot(), 0, xPos, yPos)
                 .setChangeListener(this::updateFilter)
-                .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.FILTER_SLOT_OVERLAY));
+                .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT, GUITextures.FILTER_SLOT_OVERLAY));
     }
 
     public Widget createFilterConfigUI(int xPos, int yPos, int width, int height) {

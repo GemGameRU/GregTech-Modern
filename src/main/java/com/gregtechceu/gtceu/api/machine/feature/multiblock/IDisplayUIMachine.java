@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.feature.multiblock;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
 
@@ -32,7 +32,7 @@ public interface IDisplayUIMachine extends IUIMachine, IMultiController {
     default void handleDisplayClick(String componentData, ClickData clickData) {}
 
     default IGuiTexture getScreenTexture() {
-        return GuiTextures.DISPLAY;
+        return GUITextures.DISPLAY;
     }
 
     @Override
@@ -44,8 +44,8 @@ public interface IDisplayUIMachine extends IUIMachine, IMultiController {
                 .setMaxWidthLimit(150)
                 .clickHandler(this::handleDisplayClick));
         return new ModularUI(176, 216, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(screen)
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 134, true));
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7, 134, true));
     }
 }

@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.electric;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.*;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.TieredEnergyMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IFancyUIMachine;
@@ -128,12 +128,12 @@ public class ChargerMachine extends TieredEnergyMachine implements IControllable
             colSize = 2;
         }
         var template = new WidgetGroup(0, 0, 18 * rowSize + 8, 18 * colSize + 8);
-        template.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        template.setBackground(GUITextures.BACKGROUND_INVERSE);
         int index = 0;
         for (int y = 0; y < colSize; y++) {
             for (int x = 0; x < rowSize; x++) {
                 template.addWidget(new SlotWidget(chargerInventory, index++, 4 + x * 18, 4 + y * 18, true, true)
-                        .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY)));
+                        .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT, GUITextures.CHARGER_OVERLAY)));
             }
         }
 

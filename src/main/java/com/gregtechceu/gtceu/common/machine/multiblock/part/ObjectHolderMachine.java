@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.capability.IObjectHolder;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.BlockableSlotWidget;
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.component.IDataItem;
@@ -98,13 +98,13 @@ public class ObjectHolderMachine extends MultiblockPartMachine implements IObjec
     @Override
     public Widget createUIWidget() {
         return new WidgetGroup(new Position(0, 0))
-                .addWidget(new ImageWidget(46, 15, 84, 60, GuiTextures.PROGRESS_BAR_RESEARCH_STATION_BASE))
+                .addWidget(new ImageWidget(46, 15, 84, 60, GUITextures.PROGRESS_BAR_RESEARCH_STATION_BASE))
                 .addWidget(new BlockableSlotWidget(heldItems, 0, 79, 36)
                         .setIsBlocked(this::isLocked)
-                        .setBackground(GuiTextures.SLOT, GuiTextures.RESEARCH_STATION_OVERLAY))
+                        .setBackground(GUITextures.SLOT, GUITextures.RESEARCH_STATION_OVERLAY))
                 .addWidget(new BlockableSlotWidget(heldItems, 1, 15, 36)
                         .setIsBlocked(this::isLocked)
-                        .setBackground(GuiTextures.SLOT, GuiTextures.DATA_ORB_OVERLAY));
+                        .setBackground(GUITextures.SLOT, GUITextures.DATA_ORB_OVERLAY));
     }
 
     @Override

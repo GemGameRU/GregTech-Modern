@@ -5,7 +5,7 @@ import com.gregtechceu.gtceu.api.capability.recipe.EURecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.gui.widget.PredicatedImageWidget;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -174,14 +174,14 @@ public class SimpleSteamMachine extends SteamWorkableMachine
                 32);
         group.setSelfPosition(pos);
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND_STEAM.get(isHighPressure))
+                .background(GUITextures.BACKGROUND_STEAM.get(isHighPressure))
                 .widget(group)
                 .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()))
                 .widget(new PredicatedImageWidget(pos.x + group.getSize().width / 2 - 9,
                         pos.y + group.getSize().height / 2 - 9, 18, 18,
-                        GuiTextures.INDICATOR_NO_STEAM.get(isHighPressure))
+                        GUITextures.INDICATOR_NO_STEAM.get(isHighPressure))
                         .setPredicate(recipeLogic::isWaiting))
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(),
-                        GuiTextures.SLOT_STEAM.get(isHighPressure), 7, 84, true));
+                        GUITextures.SLOT_STEAM.get(isHighPressure), 7, 84, true));
     }
 }

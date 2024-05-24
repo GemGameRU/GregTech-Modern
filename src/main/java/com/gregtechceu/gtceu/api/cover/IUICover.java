@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.cover;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 
 import com.lowdragmc.lowdraglib.gui.modular.IUIHolder;
@@ -42,9 +42,9 @@ public interface IUICover extends IUIHolder {
         var size = widget.getSize();
         widget.setSelfPosition(new Position((176 - size.width) / 2, 0));
         return new ModularUI(176, size.height + 82, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(widget)
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, size.height,
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7, size.height,
                         true));
     }
 

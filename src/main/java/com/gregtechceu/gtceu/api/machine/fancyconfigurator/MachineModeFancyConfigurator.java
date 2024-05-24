@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.FancyMachineUIWidget;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyUIProvider;
 import com.gregtechceu.gtceu.api.machine.feature.IRecipeLogicMachine;
@@ -44,7 +44,7 @@ public class MachineModeFancyConfigurator implements IFancyUIProvider {
     @Override
     public Widget createMainPage(FancyMachineUIWidget widget) {
         var group = new MachineModeConfigurator(0, 0, 140, 20 * machine.getRecipeTypes().length + 4);
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        group.setBackground(GUITextures.BACKGROUND_INVERSE);
         for (int i = 0; i < machine.getRecipeTypes().length; i++) {
             int finalI = i;
             group.addWidget(new ButtonWidget(2, 2 + i * 20, 136, 20, IGuiTexture.EMPTY,

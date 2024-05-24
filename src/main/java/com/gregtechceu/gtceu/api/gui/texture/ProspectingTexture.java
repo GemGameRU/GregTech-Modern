@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.texture;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.misc.PacketProspecting;
 import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 
@@ -168,7 +168,7 @@ public class ProspectingTexture extends AbstractTexture {
             }
         }
 
-        GuiTextures.UP.copy().setColor(ColorPattern.RED.color).rotate(direction / 2).draw(graphics, 0, 0,
+        GUITextures.UP.copy().setColor(ColorPattern.RED.color).rotate(direction / 2).draw(graphics, 0, 0,
                 x + playerXGui - 20, y + playerYGui - 20, 40, 40);
 
         // draw red vertical line

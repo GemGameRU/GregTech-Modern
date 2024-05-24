@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.common.machine.multiblock.electric;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.MetaMachineItem;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -257,7 +257,7 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
         if (widget instanceof WidgetGroup group) {
             var size = group.getSize();
             group.addWidget(new SlotWidget(machineStorage.storage, 0, size.width - 30, size.height - 30, true, true)
-                    .setBackground(GuiTextures.SLOT));
+                    .setBackground(GUITextures.SLOT));
         }
         return widget;
     }

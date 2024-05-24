@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.gui.widget;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.MachineBlock;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController;
@@ -85,7 +85,7 @@ public class PatternPreviewWidget extends WidgetGroup {
 
         scrollableWidgetGroup = new DraggableScrollableWidgetGroup(3, 132, 154, 22)
                 .setXScrollBarHeight(4)
-                .setXBarStyle(GuiTextures.SLIDER_BACKGROUND, GuiTextures.BUTTON)
+                .setXBarStyle(GUITextures.SLIDER_BACKGROUND, GUITextures.BUTTON)
                 .setScrollable(true)
                 .setDraggable(true);
         scrollableWidgetGroup.setScrollYOffset(0);

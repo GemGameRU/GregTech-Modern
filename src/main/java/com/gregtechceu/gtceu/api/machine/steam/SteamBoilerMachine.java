@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.machine.steam;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -299,25 +299,25 @@ public abstract class SteamBoilerMachine extends SteamWorkableMachine
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND_STEAM.get(isHighPressure))
+                .background(GUITextures.BACKGROUND_STEAM.get(isHighPressure))
                 .widget(new LabelWidget(6, 6, getBlockState().getBlock().getDescriptionId()))
                 .widget(new ProgressWidget(this::getTemperaturePercent, 96, 26, 10, 54)
-                        .setProgressTexture(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure),
-                                GuiTextures.PROGRESS_BAR_BOILER_HEAT)
+                        .setProgressTexture(GUITextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure),
+                                GUITextures.PROGRESS_BAR_BOILER_HEAT)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
                         .setDynamicHoverTips(pct -> I18n.get("gtceu.multiblock.large_boiler.temperature",
                                 (int) (currentTemperature + 274.15), (int) (getMaxTemperature() + 274.15))))
                 .widget(new TankWidget(waterTank.getStorages()[0], 83, 26, 10, 54, false, true)
                         .setShowAmount(false)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
-                        .setBackground(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)))
+                        .setBackground(GUITextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)))
                 .widget(new TankWidget(steamTank.getStorages()[0], 70, 26, 10, 54, true, false)
                         .setShowAmount(false)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
-                        .setBackground(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)))
-                .widget(new ImageWidget(43, 44, 18, 18, GuiTextures.CANISTER_OVERLAY_STEAM.get(isHighPressure)))
+                        .setBackground(GUITextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)))
+                .widget(new ImageWidget(43, 44, 18, 18, GUITextures.CANISTER_OVERLAY_STEAM.get(isHighPressure)))
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(),
-                        GuiTextures.SLOT_STEAM.get(isHighPressure), 7, 84, true));
+                        GUITextures.SLOT_STEAM.get(isHighPressure), 7, 84, true));
     }
 
     //////////////////////////////////////

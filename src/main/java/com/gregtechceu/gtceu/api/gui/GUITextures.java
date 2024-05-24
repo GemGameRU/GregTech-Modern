@@ -11,7 +11,7 @@ import lombok.val;
  * @implNote GuiTextures
  */
 @SuppressWarnings("unused")
-public class GuiTextures {
+public class GUITextures {
 
     // GREGTECH
     public static final ResourceTexture GREGTECH_LOGO = new ResourceTexture(

@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.primitive;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
@@ -39,22 +39,22 @@ public class CokeOvenMachine extends PrimitiveWorkableMachine implements IUIMach
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.PRIMITIVE_BACKGROUND)
+                .background(GUITextures.PRIMITIVE_BACKGROUND)
                 .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()))
                 .widget(new SlotWidget(importItems.storage, 0, 52, 30, true, true)
                         .setBackgroundTexture(
-                                new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_FURNACE_OVERLAY)))
+                                new GuiTextureGroup(GUITextures.PRIMITIVE_SLOT, GUITextures.PRIMITIVE_FURNACE_OVERLAY)))
                 .widget(new ProgressWidget(recipeLogic::getProgressPercent, 76, 32, 20, 15,
-                        GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR))
+                        GUITextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR))
                 .widget(new SlotWidget(exportItems.storage, 0, 103, 30, true, false)
                         .setBackgroundTexture(
-                                new GuiTextureGroup(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_FURNACE_OVERLAY)))
+                                new GuiTextureGroup(GUITextures.PRIMITIVE_SLOT, GUITextures.PRIMITIVE_FURNACE_OVERLAY)))
                 .widget(new TankWidget(exportFluids.getStorages()[0], 134, 13, 20, 58, true, false)
-                        .setBackground(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK)
+                        .setBackground(GUITextures.PRIMITIVE_LARGE_FLUID_TANK)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
                         .setShowAmount(false)
-                        .setOverlay(GuiTextures.PRIMITIVE_LARGE_FLUID_TANK_OVERLAY))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.PRIMITIVE_SLOT, 7, 84,
+                        .setOverlay(GUITextures.PRIMITIVE_LARGE_FLUID_TANK_OVERLAY))
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.PRIMITIVE_SLOT, 7, 84,
                         true));
     }
 

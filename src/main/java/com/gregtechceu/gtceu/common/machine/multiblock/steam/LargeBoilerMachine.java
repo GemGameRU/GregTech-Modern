@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeHandler;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.TickableSubscription;
@@ -240,6 +240,6 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IEx
 
     @Override
     public IGuiTexture getScreenTexture() {
-        return GuiTextures.DISPLAY_STEAM.get(maxTemperature > 800);
+        return GUITextures.DISPLAY_STEAM.get(maxTemperature > 800);
     }
 }

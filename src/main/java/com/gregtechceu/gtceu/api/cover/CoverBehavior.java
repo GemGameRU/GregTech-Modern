@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.cover;
 
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.factory.CoverUIFactory;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.item.tool.IToolGridHighLight;
@@ -188,10 +188,10 @@ public abstract class CoverBehavior implements IEnhancedManaged, IToolGridHighLi
     @Override
     public ResourceTexture sideTips(Player player, Set<GTToolType> toolTypes, Direction side) {
         if (toolTypes.contains(GTToolType.CROWBAR)) {
-            return GuiTextures.TOOL_REMOVE_COVER;
+            return GUITextures.TOOL_REMOVE_COVER;
         }
         if (toolTypes.contains(GTToolType.SCREWDRIVER) && this instanceof IUICover) {
-            return GuiTextures.TOOL_COVER_SETTINGS;
+            return GUITextures.TOOL_COVER_SETTINGS;
         }
         return null;
     }

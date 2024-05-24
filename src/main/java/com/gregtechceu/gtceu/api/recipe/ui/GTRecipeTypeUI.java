@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.SteamTexture;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.editor.IEditableUI;
@@ -66,8 +66,8 @@ public class GTRecipeTypeUI {
     @Getter
     @Setter
     private ProgressTexture progressBarTexture = new ProgressTexture(
-            GuiTextures.PROGRESS_BAR_ARROW.getSubTexture(0, 0, 1, 0.5),
-            GuiTextures.PROGRESS_BAR_ARROW.getSubTexture(0, 0.5, 1, 0.5));
+            GUITextures.PROGRESS_BAR_ARROW.getSubTexture(0, 0, 1, 0.5),
+            GUITextures.PROGRESS_BAR_ARROW.getSubTexture(0, 0.5, 1, 0.5));
     @Setter
     private SteamTexture steamProgressBarTexture = null;
     @Setter
@@ -380,8 +380,8 @@ public class GTRecipeTypeUI {
 
     protected IGuiTexture getOverlaysForSlot(boolean isOutput, RecipeCapability<?> capability, boolean isLast,
                                              boolean isSteam, boolean isHighPressure) {
-        IGuiTexture base = capability == FluidRecipeCapability.CAP ? GuiTextures.FLUID_SLOT :
-                (isSteam ? GuiTextures.SLOT_STEAM.get(isHighPressure) : GuiTextures.SLOT);
+        IGuiTexture base = capability == FluidRecipeCapability.CAP ? GUITextures.FLUID_SLOT :
+                (isSteam ? GUITextures.SLOT_STEAM.get(isHighPressure) : GUITextures.SLOT);
         byte overlayKey = (byte) ((isOutput ? 2 : 0) + (capability == FluidRecipeCapability.CAP ? 1 : 0) +
                 (isLast ? 4 : 0));
         if (slotOverlays.containsKey(overlayKey)) {

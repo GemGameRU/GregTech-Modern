@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.cover;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
 import com.gregtechceu.gtceu.data.tag.GTDataComponents;
@@ -124,15 +124,15 @@ public class SimpleItemFilter implements IItemFilter {
                 slot.setChangeListener(() -> {
                     matches[index] = handler.getStackInSlot(0);
                     onUpdated.accept(this);
-                }).setBackground(GuiTextures.SLOT);
+                }).setBackground(GUITextures.SLOT);
 
                 group.addWidget(slot);
             }
         }
         group.addWidget(new ToggleButtonWidget(18 * 3 + 2, 9, 18, 18,
-                GuiTextures.BUTTON_BLACKLIST, this::isBlackList, this::setBlackList));
+                GUITextures.BUTTON_BLACKLIST, this::isBlackList, this::setBlackList));
         group.addWidget(new ToggleButtonWidget(18 * 3 + 2, (18) + 9, 18, 18,
-                GuiTextures.BUTTON_FILTER_NBT, this::isIgnoreNbt, this::setIgnoreNbt));
+                GUITextures.BUTTON_FILTER_NBT, this::isIgnoreNbt, this::setIgnoreNbt));
         return group;
     }
 

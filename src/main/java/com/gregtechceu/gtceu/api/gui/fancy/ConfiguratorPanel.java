@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.fancy;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
 import com.lowdragmc.lowdraglib.gui.animation.Animation;
@@ -47,7 +47,7 @@ public class ConfiguratorPanel extends WidgetGroup {
     @Setter
     protected int border = 4;
     @Setter
-    protected IGuiTexture texture = GuiTextures.BACKGROUND;
+    protected IGuiTexture texture = GUITextures.BACKGROUND;
 
     public ConfiguratorPanel(int x, int y) {
         super(x, y, 24, 0);
@@ -414,7 +414,7 @@ public class ConfiguratorPanel extends WidgetGroup {
 
         public FloatingTab(IFancyConfigurator configurator) {
             super(configurator);
-            this.view.setBackground(GuiTextures.BACKGROUND);
+            this.view.setBackground(GUITextures.BACKGROUND);
         }
 
         @Override

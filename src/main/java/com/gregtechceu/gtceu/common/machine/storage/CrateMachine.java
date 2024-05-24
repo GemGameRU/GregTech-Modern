@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -65,15 +65,15 @@ public class CrateMachine extends MetaMachine implements IUIMachine, IMachineMod
         int yOffset = inventorySize > 3 * yOverflow ?
                 (inventorySize - 3 * yOverflow - (inventorySize - 3 * yOverflow) % yOverflow) / yOverflow * 18 : 0;
         var modularUI = new ModularUI(176 + xOffset, 166 + yOffset, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7 + xOffset / 2,
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7 + xOffset / 2,
                         82 + yOffset, true));
         int x = 0;
         int y = 0;
         for (int slot = 0; slot < inventorySize; slot++) {
             modularUI.widget(new SlotWidget(inventory, slot, x * 18 + 7, y * 18 + 17)
-                    .setBackgroundTexture(GuiTextures.SLOT));
+                    .setBackgroundTexture(GUITextures.SLOT));
             x++;
             if (x == yOverflow) {
                 x = 0;

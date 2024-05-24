@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IDataAccessHatch;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.IDataInfoProvider;
 import com.gregtechceu.gtceu.api.machine.feature.IMachineModifyDrops;
@@ -100,7 +100,7 @@ public class DataAccessHatchMachine extends TieredPartMachine
                 int index = y * rowSize + x;
                 group.addWidget(new SlotWidget(importItems, index,
                         rowSize * 9 + x * 18 - xOffset, y * 18, true, true)
-                        .setBackgroundTexture(GuiTextures.SLOT));
+                        .setBackgroundTexture(GUITextures.SLOT));
             }
         }
         return group;

@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.multiblock.part.hpca;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IHPCACoolantProvider;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 
 import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
@@ -27,7 +27,7 @@ public class HPCACoolerPartMachine extends HPCAComponentPartMachine implements I
 
     @Override
     public ResourceTexture getComponentIcon() {
-        return advanced ? GuiTextures.HPCA_ICON_ACTIVE_COOLER_COMPONENT : GuiTextures.HPCA_ICON_HEAT_SINK_COMPONENT;
+        return advanced ? GUITextures.HPCA_ICON_ACTIVE_COOLER_COMPONENT : GUITextures.HPCA_ICON_HEAT_SINK_COMPONENT;
     }
 
     @Override

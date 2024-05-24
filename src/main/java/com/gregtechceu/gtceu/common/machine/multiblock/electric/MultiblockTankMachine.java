@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.multiblock.electric;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.fluid.PropertyFluidFilter;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.IFancyUIMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
@@ -71,13 +71,13 @@ public class MultiblockTankMachine extends MultiblockControllerMachine implement
     @Override
     public Widget createUIWidget() {
         var group = new WidgetGroup(0, 0, 90, 63);
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        group.setBackground(GUITextures.BACKGROUND_INVERSE);
 
-        group.addWidget(new ImageWidget(4, 4, 82, 55, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(4, 4, 82, 55, GUITextures.DISPLAY));
         group.addWidget(new LabelWidget(8, 8, "gtceu.gui.fluid_amount"));
         group.addWidget(new LabelWidget(8, 18, this::getFluidLabel).setTextColor(-1).setDropShadow(true));
         group.addWidget(new TankWidget(tank.getStorages()[0], 68, 23, true, true)
-                .setBackground(GuiTextures.FLUID_SLOT));
+                .setBackground(GUITextures.FLUID_SLOT));
 
         return group;
     }

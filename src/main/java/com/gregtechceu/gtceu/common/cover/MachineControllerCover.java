@@ -6,7 +6,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
@@ -202,14 +202,14 @@ public class MachineControllerCover extends CoverBehavior implements IUICover {
                 this::getMinRedstoneStrength, this::setMinRedstoneStrength).setMin(1).setMax(15));
 
         modeButton = new ButtonWidget(10, 45, 131, 20,
-                new GuiTextureGroup(GuiTextures.VANILLA_BUTTON),
+                new GuiTextureGroup(GUITextures.VANILLA_BUTTON),
                 cd -> selectNextMode());
         group.addWidget(modeButton);
 
         // Inverted Mode Toggle:
         group.addWidget(new ToggleButtonWidget(
                 146, 20, 20, 20,
-                GuiTextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
+                GUITextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
 
             @Override
             public void updateScreen() {
@@ -254,7 +254,7 @@ public class MachineControllerCover extends CoverBehavior implements IUICover {
         if (modeButton == null) return;
 
         modeButton.setButtonTexture(new GuiTextureGroup(
-                GuiTextures.VANILLA_BUTTON,
+                GUITextures.VANILLA_BUTTON,
                 new TextTexture(controllerMode.localeName)));
     }
 

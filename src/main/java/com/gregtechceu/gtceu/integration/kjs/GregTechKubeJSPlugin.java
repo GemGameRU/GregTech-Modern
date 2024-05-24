@@ -9,7 +9,7 @@ import com.gregtechceu.gtceu.api.fluid.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluid.FluidState;
 import com.gregtechceu.gtceu.api.fluid.GTFluidAttributes;
 import com.gregtechceu.gtceu.api.fluid.FluidStorageKeys;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
@@ -229,7 +229,7 @@ public class GregTechKubeJSPlugin implements KubeJSPlugin {
         event.add("MultiblockShapeInfo", MultiblockShapeInfo.class);
         event.add("Predicates", Predicates.class);
         event.add("PartAbility", PartAbility.class);
-        event.add("GuiTextures", GuiTextures.class);
+        event.add("GuiTextures", GUITextures.class);
         event.add("GTCEu", GTCEu.class);
         event.add("GTCEuAPI", GTCEuAPI.class);
         event.add("GTMaterialRegistry", MaterialRegistryManager.getInstance());

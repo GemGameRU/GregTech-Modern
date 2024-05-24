@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyConfigurator;
 import com.gregtechceu.gtceu.common.item.IntCircuitBehaviour;
 import com.gregtechceu.gtceu.config.ConfigHolder;
@@ -54,7 +54,7 @@ public class CircuitFancyConfigurator implements IFancyConfigurator {
         group.addWidget(new LabelWidget(9, 8, "Programmed Circuit Configuration"));
         group.addWidget(new SlotWidget(circuitSlot, 0, (group.getSize().width - 18) / 2, 20,
                 !ConfigHolder.INSTANCE.machines.ghostCircuit, !ConfigHolder.INSTANCE.machines.ghostCircuit)
-                .setBackground(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.INT_CIRCUIT_OVERLAY)));
+                .setBackground(new GuiTextureGroup(GUITextures.SLOT, GUITextures.INT_CIRCUIT_OVERLAY)));
         if (ConfigHolder.INSTANCE.machines.ghostCircuit) {
             group.addWidget(new ButtonWidget((group.getSize().width - 18) / 2, 20, 18, 18, IGuiTexture.EMPTY,
                     clickData -> {
@@ -68,7 +68,7 @@ public class CircuitFancyConfigurator implements IFancyConfigurator {
             for (int y = 0; y <= 8; y++) {
                 int finalIdx = idx;
                 group.addWidget(new ButtonWidget(5 + (18 * y), 48 + (18 * x), 18, 18,
-                        new GuiTextureGroup(GuiTextures.SLOT,
+                        new GuiTextureGroup(GUITextures.SLOT,
                                 new ItemStackTexture(IntCircuitBehaviour.stack(finalIdx)).scale(16f / 18)),
                         clickData -> {
                             if (!clickData.isRemote) {
@@ -87,7 +87,7 @@ public class CircuitFancyConfigurator implements IFancyConfigurator {
         for (int x = 0; x <= 5; x++) {
             int finalIdx = x + 27;
             group.addWidget(new ButtonWidget(5 + (18 * x), 102, 18, 18,
-                    new GuiTextureGroup(GuiTextures.SLOT,
+                    new GuiTextureGroup(GUITextures.SLOT,
                             new ItemStackTexture(IntCircuitBehaviour.stack(finalIdx)).scale(16f / 18)),
                     clickData -> {
                         if (!clickData.isRemote) {

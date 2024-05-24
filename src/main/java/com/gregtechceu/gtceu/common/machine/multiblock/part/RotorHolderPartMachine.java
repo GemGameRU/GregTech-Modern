@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.TickableSubscription;
 import com.gregtechceu.gtceu.api.machine.feature.IInteractedMachine;
@@ -218,8 +218,8 @@ public class RotorHolderPartMachine extends TieredPartMachine
         var group = new WidgetGroup(0, 0, 18 + 16, 18 + 16);
         var container = new WidgetGroup(4, 4, 18 + 8, 18 + 8);
         container.addWidget(new SlotWidget(inventory.storage, 0, 4, 4, true, true)
-                .setBackground(GuiTextures.SLOT, GuiTextures.TURBINE_OVERLAY));
-        container.setBackground(GuiTextures.BACKGROUND_INVERSE);
+                .setBackground(GUITextures.SLOT, GUITextures.TURBINE_OVERLAY));
+        container.setBackground(GUITextures.BACKGROUND_INVERSE);
         group.addWidget(container);
         return group;
     }

@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.data.recipe;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.block.ICoilType;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.data.sound.GTSoundEntries;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
@@ -34,13 +34,13 @@ public class GCyMRecipeTypes {
     public final static GTRecipeType ALLOY_BLAST_RECIPES = register("alloy_blast_smelter", MULTIBLOCK)
             .setMaxIOSize(9, 0, 3, 1)
             .setEUIO(IO.IN)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
-            .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
-            .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
-            .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setProgressBar(GUITextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSlotOverlay(false, false, false, GUITextures.FURNACE_OVERLAY_1)
+            .setSlotOverlay(false, false, true, GUITextures.FURNACE_OVERLAY_1)
+            .setSlotOverlay(false, true, false, GUITextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(false, true, true, GUITextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, false, GUITextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, true, GUITextures.FURNACE_OVERLAY_2)
             .addDataInfo(data -> {
                 int temp = data.getInt("ebf_temp");
                 return LocalizationUtils.format("gtceu.recipe.temperature", FormattingUtil.formatNumbers(temp));

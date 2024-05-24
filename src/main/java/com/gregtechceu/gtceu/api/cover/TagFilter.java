@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.cover;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.utils.OreDictExprFilter;
 
@@ -57,7 +57,7 @@ public abstract class TagFilter<T, S extends IFilter<T, S>> implements IFilter<T
 
     public WidgetGroup openConfigurator(int x, int y) {
         WidgetGroup group = new WidgetGroup(x, y, 18 * 3 + 25, 18 * 3); // 80 55
-        group.addWidget(new ImageWidget(0, 0, 20, 20, GuiTextures.INFO_ICON)
+        group.addWidget(new ImageWidget(0, 0, 20, 20, GUITextures.INFO_ICON)
                 .setHoverTooltips(
                         LangHandler.getMultiLang("cover.ore_dictionary_filter.info").toArray(new MutableComponent[0])));
         group.addWidget(new TextFieldWidget(0, 29, 18 * 3 + 25, 12, () -> oreDictFilterExpression, this::setOreDict)

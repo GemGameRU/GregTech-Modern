@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration.ae2.util;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.integration.ae2.gui.widget.AEConfigWidget;
 import com.gregtechceu.gtceu.integration.ae2.machine.MEInputHatchPartMachine;
 
@@ -58,11 +58,11 @@ public class AEFluidConfigSlot extends AEConfigSlot {
         IConfigurableSlot slot = this.parentWidget.getDisplay(this.index);
         GenericStack config = slot.getConfig();
         GenericStack stock = slot.getStock();
-        GuiTextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
-        GuiTextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y + 18, 18, 18);
-        GuiTextures.CONFIG_ARROW.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
+        GUITextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
+        GUITextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y + 18, 18, 18);
+        GUITextures.CONFIG_ARROW.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
         if (this.select) {
-            GuiTextures.SELECT_BOX.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
+            GUITextures.SELECT_BOX.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
         }
         int stackX = position.x + 1;
         int stackY = position.y + 1;

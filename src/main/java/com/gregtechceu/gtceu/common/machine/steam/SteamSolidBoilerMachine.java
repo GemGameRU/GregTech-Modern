@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.common.machine.steam;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.IMachineModifyDrops;
 import com.gregtechceu.gtceu.api.machine.steam.SteamBoilerMachine;
@@ -134,15 +134,15 @@ public class SteamSolidBoilerMachine extends SteamBoilerMachine implements IMach
     public ModularUI createUI(Player entityPlayer) {
         return super.createUI(entityPlayer)
                 .widget(new SlotWidget(this.fuelHandler.storage, 0, 115, 62)
-                        .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT_STEAM.get(isHighPressure),
-                                GuiTextures.COAL_OVERLAY_STEAM.get(isHighPressure))))
+                        .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT_STEAM.get(isHighPressure),
+                                GUITextures.COAL_OVERLAY_STEAM.get(isHighPressure))))
                 .widget(new SlotWidget(this.ashHandler.storage, 0, 115, 26, true, false)
-                        .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT_STEAM.get(isHighPressure),
-                                GuiTextures.DUST_OVERLAY_STEAM.get(isHighPressure))))
+                        .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT_STEAM.get(isHighPressure),
+                                GUITextures.DUST_OVERLAY_STEAM.get(isHighPressure))))
                 .widget(new ProgressWidget(recipeLogic::getProgressPercent, 115, 44, 18, 18)
                         .setProgressTexture(
-                                GuiTextures.PROGRESS_BAR_BOILER_FUEL.get(isHighPressure).getSubTexture(0, 0, 1, 0.5),
-                                GuiTextures.PROGRESS_BAR_BOILER_FUEL.get(isHighPressure).getSubTexture(0, 0.5, 1, 0.5))
+                                GUITextures.PROGRESS_BAR_BOILER_FUEL.get(isHighPressure).getSubTexture(0, 0, 1, 0.5),
+                                GUITextures.PROGRESS_BAR_BOILER_FUEL.get(isHighPressure).getSubTexture(0, 0.5, 1, 0.5))
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP));
     }
 

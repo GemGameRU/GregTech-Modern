@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.machine.trait;
 
 import com.gregtechceu.gtceu.api.capability.IWorkable;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyTooltip;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.TickableSubscription;
@@ -527,7 +527,7 @@ public class RecipeLogic extends MachineTrait implements IEnhancedManaged, IWork
     @Override
     public IGuiTexture getFancyTooltipIcon() {
         if (isWaiting()) {
-            return GuiTextures.INSUFFICIENT_INPUT;
+            return GUITextures.INSUFFICIENT_INPUT;
         }
         return IGuiTexture.EMPTY;
     }

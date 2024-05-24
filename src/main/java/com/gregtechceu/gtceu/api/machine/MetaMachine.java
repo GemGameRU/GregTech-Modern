@@ -12,7 +12,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.capability.IToolable;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyTooltip;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.item.tool.IToolGridHighLight;
@@ -503,16 +503,16 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
         if (toolTypes.contains(GTToolType.WRENCH)) {
             if (player.isShiftKeyDown()) {
                 if (isFacingValid(side)) {
-                    return GuiTextures.TOOL_FRONT_FACING_ROTATION;
+                    return GUITextures.TOOL_FRONT_FACING_ROTATION;
                 }
             }
         } else if (toolTypes.contains(GTToolType.SOFT_MALLET)) {
             if (this instanceof IControllable controllable) {
-                return controllable.isWorkingEnabled() ? GuiTextures.TOOL_PAUSE : GuiTextures.TOOL_START;
+                return controllable.isWorkingEnabled() ? GUITextures.TOOL_PAUSE : GUITextures.TOOL_START;
             }
         } else if (toolTypes.contains(GTToolType.HARD_HAMMER)) {
             if (this instanceof IMufflableMachine mufflableMachine) {
-                return mufflableMachine.isMuffled() ? GuiTextures.TOOL_SOUND : GuiTextures.TOOL_MUTE;
+                return mufflableMachine.isMuffled() ? GUITextures.TOOL_SOUND : GUITextures.TOOL_MUTE;
             }
         }
         var cover = coverContainer.getCoverAtSide(side);
@@ -697,7 +697,7 @@ public class MetaMachine implements IEnhancedManaged, IToolable, ITickSubscripti
     //////////////////////////////////////
     @Override
     public IGuiTexture getFancyTooltipIcon() {
-        return GuiTextures.INFO_ICON;
+        return GUITextures.INFO_ICON;
     }
 
     @Override

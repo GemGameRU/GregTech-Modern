@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.kinetic;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.TieredEnergyMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IFancyUIMachine;
@@ -148,14 +148,14 @@ public class ElectricGearBoxMachine extends TieredEnergyMachine implements IKine
                 new TextTexture("").setWidth(92).setType(TextTexture.TextType.ROLL)
                         .setSupplier(() -> "Speed: " + getKineticHolder().workingSpeed)))
                 .addWidget(new ButtonWidget(4, 24, 30, 20,
-                        new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, new TextTexture("-8rpm")), cd -> {
+                        new GuiTextureGroup(GUITextures.VANILLA_BUTTON, new TextTexture("-8rpm")), cd -> {
                             if (!cd.isRemote) {
                                 int amount = cd.isCtrlClick ? cd.isShiftClick ? 32 : 16 : cd.isShiftClick ? 4 : 1;
                                 setCurrentAmps(currentAmps - amount);
                             }
                         }).setHoverTooltips("gui.widget.incrementButton.default_tooltip"))
                 .addWidget(new ButtonWidget(130, 24, 30, 20,
-                        new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, new TextTexture("+8rpm")), cd -> {
+                        new GuiTextureGroup(GUITextures.VANILLA_BUTTON, new TextTexture("+8rpm")), cd -> {
                             if (!cd.isRemote) {
                                 int amount = cd.isCtrlClick ? cd.isShiftClick ? 32 : 16 : cd.isShiftClick ? 4 : 1;
                                 setCurrentAmps(currentAmps + amount);
@@ -164,7 +164,7 @@ public class ElectricGearBoxMachine extends TieredEnergyMachine implements IKine
                 .addWidget(new ImageWidget(36, 24, 92, 20, new GuiTextureGroup(new ColorRectTexture(0xff000000),
                         new ColorBorderTexture(1, -1), new TextTexture("").setWidth(92)
                                 .setType(TextTexture.TextType.ROLL).setSupplier(() -> getCurrentRPM() + "rpm"))));
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        group.setBackground(GUITextures.BACKGROUND_INVERSE);
         return group;
     }
 

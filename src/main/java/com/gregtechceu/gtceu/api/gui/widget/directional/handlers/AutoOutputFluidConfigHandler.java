@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.widget.directional.handlers;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.FancyMachineUIWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.gui.widget.directional.IDirectionalConfigHandler;
@@ -29,14 +29,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class AutoOutputFluidConfigHandler implements IDirectionalConfigHandler {
 
     private static final IGuiTexture TEXTURE_OFF = new GuiTextureGroup(
-            GuiTextures.VANILLA_BUTTON,
-            GuiTextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 0, 1, 1 / 3f));
+            GUITextures.VANILLA_BUTTON,
+            GUITextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 0, 1, 1 / 3f));
     private static final IGuiTexture TEXTURE_OUTPUT = new GuiTextureGroup(
-            GuiTextures.VANILLA_BUTTON,
-            GuiTextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 1 / 3f, 1, 1 / 3f));
+            GUITextures.VANILLA_BUTTON,
+            GUITextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 1 / 3f, 1, 1 / 3f));
     private static final IGuiTexture TEXTURE_AUTO = new GuiTextureGroup(
-            GuiTextures.VANILLA_BUTTON,
-            GuiTextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 2 / 3f, 1, 1 / 3f));
+            GUITextures.VANILLA_BUTTON,
+            GUITextures.IO_CONFIG_FLUID_MODES_BUTTON.getSubTexture(0, 2 / 3f, 1, 1 / 3f));
 
     private final IAutoOutputFluid machine;
     private Direction side;
@@ -68,7 +68,7 @@ public class AutoOutputFluidConfigHandler implements IDirectionalConfigHandler {
         });
 
         group.addWidget(new ToggleButtonWidget(
-                19, 0, 18, 18, GuiTextures.BUTTON_FLUID_OUTPUT,
+                19, 0, 18, 18, GUITextures.BUTTON_FLUID_OUTPUT,
                 machine::isAllowInputFromOutputSideFluids, machine::setAllowInputFromOutputSideFluids)
                 .setShouldUseBaseBackground().setTooltipText("gtceu.gui.fluid_auto_output.allow_input"));
 

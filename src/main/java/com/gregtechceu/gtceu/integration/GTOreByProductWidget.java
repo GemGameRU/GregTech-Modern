@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.api.transfer.fluid.CustomFluidTank;
@@ -103,21 +103,21 @@ public class GTOreByProductWidget extends WidgetGroup {
         List<Boolean> itemOutputExists = new ArrayList<>();
 
         // only draw slot on inputs if it is the ore
-        addWidget(new ImageWidget(ITEM_INPUT_LOCATIONS.get(0), ITEM_INPUT_LOCATIONS.get(1), 18, 18, GuiTextures.SLOT));
+        addWidget(new ImageWidget(ITEM_INPUT_LOCATIONS.get(0), ITEM_INPUT_LOCATIONS.get(1), 18, 18, GUITextures.SLOT));
         boolean hasSifter = recipeWrapper.hasSifter();
 
-        addWidget(new ImageWidget(0, 0, 176, 166, GuiTextures.OREBY_BASE));
+        addWidget(new ImageWidget(0, 0, 176, 166, GUITextures.OREBY_BASE));
         if (recipeWrapper.hasDirectSmelt()) {
-            addWidget(new ImageWidget(0, 0, 176, 166, GuiTextures.OREBY_SMELT));
+            addWidget(new ImageWidget(0, 0, 176, 166, GUITextures.OREBY_SMELT));
         }
         if (recipeWrapper.hasChemBath()) {
-            addWidget(new ImageWidget(0, 0, 176, 166, GuiTextures.OREBY_CHEM));
+            addWidget(new ImageWidget(0, 0, 176, 166, GUITextures.OREBY_CHEM));
         }
         if (recipeWrapper.hasSeparator()) {
-            addWidget(new ImageWidget(0, 0, 176, 166, GuiTextures.OREBY_SEP));
+            addWidget(new ImageWidget(0, 0, 176, 166, GUITextures.OREBY_SEP));
         }
         if (hasSifter) {
-            addWidget(new ImageWidget(0, 0, 176, 166, GuiTextures.OREBY_SIFT));
+            addWidget(new ImageWidget(0, 0, 176, 166, GUITextures.OREBY_SIFT));
         }
 
         List<Either<List<Pair<TagKey<Item>, Integer>>, List<ItemStack>>> itemInputs = recipeWrapper.itemInputs;
@@ -168,7 +168,7 @@ public class GTOreByProductWidget extends WidgetGroup {
                 fluidStackGroup
                         .addWidget(new TankWidget(new CustomFluidTank(fluidInputsHandler.getFluidInTank(slotIndex)),
                                 FLUID_LOCATIONS.get(i), FLUID_LOCATIONS.get(i + 1), false, false)
-                                .setIngredientIO(IngredientIO.INPUT).setBackground(GuiTextures.FLUID_SLOT));
+                                .setIngredientIO(IngredientIO.INPUT).setBackground(GUITextures.FLUID_SLOT));
             }
         }
 
@@ -179,7 +179,7 @@ public class GTOreByProductWidget extends WidgetGroup {
             // stupid hack to show all sifter slots if the first one exists
             if (itemOutputExists.get(i / 2) || (i > 28 * 2 && itemOutputExists.get(28) && hasSifter)) {
                 addWidget(this.widgets.size() - 3, new ImageWidget(ITEM_OUTPUT_LOCATIONS.get(i),
-                        ITEM_OUTPUT_LOCATIONS.get(i + 1), 18, 18, GuiTextures.SLOT));
+                        ITEM_OUTPUT_LOCATIONS.get(i + 1), 18, 18, GUITextures.SLOT));
             }
         }
     }

@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.item.tool.ToolHelper;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -347,7 +347,7 @@ public class MaintenanceHatchPartMachine extends TieredPartMachine
         WidgetGroup group;
         if (isConfigurable) {
             group = new WidgetGroup(0, 0, 150, 70);
-            group.addWidget(new DraggableScrollableWidgetGroup(4, 4, 150 - 8, 70 - 8).setBackground(GuiTextures.DISPLAY)
+            group.addWidget(new DraggableScrollableWidgetGroup(4, 4, 150 - 8, 70 - 8).setBackground(GUITextures.DISPLAY)
                     .addWidget(new ComponentPanelWidget(4, 5, list -> {
                         list.add(getTextWidgetText("duration", this::getDurationMultiplier));
                         list.add(getTextWidgetText("time", this::getTimeMultiplier));
@@ -371,12 +371,12 @@ public class MaintenanceHatchPartMachine extends TieredPartMachine
             group = new WidgetGroup(0, 0, 8 + 18, 8 + 20 + 18);
         }
         group.addWidget(new SlotWidget(itemStackHandler, 0, group.getSize().width - 4 - 18, 4)
-                .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.DUCT_TAPE_OVERLAY))
+                .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT, GUITextures.DUCT_TAPE_OVERLAY))
                 .setHoverTooltips("gtceu.machine.maintenance_hatch_tape_slot.tooltip"));
-        group.addWidget(new ButtonWidget(group.getSize().width - 4 - 18, 4 + 20, 18, 18, GuiTextures.MAINTENANCE_BUTTON,
+        group.addWidget(new ButtonWidget(group.getSize().width - 4 - 18, 4 + 20, 18, 18, GUITextures.MAINTENANCE_BUTTON,
                 data -> fixMaintenanceProblems(group.getGui().entityPlayer))
                 .setHoverTooltips("gtceu.machine.maintenance_hatch_tool_slot.tooltip"));
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        group.setBackground(GUITextures.BACKGROUND_INVERSE);
         return group;
     }
 

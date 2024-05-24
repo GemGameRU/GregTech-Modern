@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.machine;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.*;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
 import com.gregtechceu.gtceu.api.gui.editor.EditableUI;
 import com.gregtechceu.gtceu.api.gui.fancy.ConfiguratorPanel;
@@ -364,7 +364,7 @@ public class SimpleTieredMachine extends WorkableTieredMachine implements IAutoO
     protected static EditableUI<SlotWidget, SimpleTieredMachine> createBatterySlot() {
         return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
             var slotWidget = new SlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            slotWidget.setBackground(GUITextures.SLOT, GUITextures.CHARGER_OVERLAY);
             return slotWidget;
         }, (slotWidget, machine) -> {
             slotWidget.setHandlerSlot(machine.chargerInventory, 0);
@@ -381,7 +381,7 @@ public class SimpleTieredMachine extends WorkableTieredMachine implements IAutoO
     protected static EditableUI<GhostCircuitSlotWidget, SimpleTieredMachine> createCircuitConfigurator() {
         return new EditableUI<>("circuit_configurator", GhostCircuitSlotWidget.class, () -> {
             var slotWidget = new GhostCircuitSlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.INT_CIRCUIT_OVERLAY);
+            slotWidget.setBackground(GUITextures.SLOT, GUITextures.INT_CIRCUIT_OVERLAY);
             return slotWidget;
         }, (slotWidget, machine) -> {
             slotWidget.setCircuitInventory(machine.circuitInventory);
@@ -394,7 +394,7 @@ public class SimpleTieredMachine extends WorkableTieredMachine implements IAutoO
 
     // Method provided to override
     protected IGuiTexture getCircuitSlotOverlay() {
-        return GuiTextures.INT_CIRCUIT_OVERLAY;
+        return GUITextures.INT_CIRCUIT_OVERLAY;
     }
 
     //////////////////////////////////////
@@ -405,13 +405,13 @@ public class SimpleTieredMachine extends WorkableTieredMachine implements IAutoO
         if (toolTypes.contains(GTToolType.WRENCH)) {
             if (!player.isShiftKeyDown()) {
                 if (!hasFrontFacing() || side != getFrontFacing()) {
-                    return GuiTextures.TOOL_IO_FACING_ROTATION;
+                    return GUITextures.TOOL_IO_FACING_ROTATION;
                 }
             }
         }
         if (toolTypes.contains(GTToolType.SCREWDRIVER)) {
             if (side == getOutputFacingItems() || side == getOutputFacingFluids()) {
-                return GuiTextures.TOOL_ALLOW_INPUT;
+                return GUITextures.TOOL_ALLOW_INPUT;
             }
         }
         return super.sideTips(player, toolTypes, side);

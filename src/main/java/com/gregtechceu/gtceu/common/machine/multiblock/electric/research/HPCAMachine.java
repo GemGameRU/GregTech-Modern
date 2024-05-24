@@ -5,7 +5,7 @@ import com.gregtechceu.gtceu.api.capability.*;
 import com.gregtechceu.gtceu.api.capability.recipe.EURecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.util.TimedProgressSupplier;
 import com.gregtechceu.gtceu.api.gui.widget.ExtendedProgressWidget;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -241,7 +241,7 @@ public class HPCAMachine extends WorkableElectricMultiblockMachine
         // Create the hover grid
         builder.addWidget(new ExtendedProgressWidget(
                 () -> hpcaHandler.getAllocatedCWUt() > 0 ? progressSupplier.getAsDouble() : 0,
-                74, 57, 47, 47, GuiTextures.HPCA_COMPONENT_OUTLINE)
+                74, 57, 47, 47, GUITextures.HPCA_COMPONENT_OUTLINE)
                 .setServerTooltipSupplier(hpcaHandler::addInfo)
                 .setFillDirection(ProgressTexture.FillDirection.LEFT_TO_RIGHT));
         int startX = 76;
@@ -704,7 +704,7 @@ public class HPCAMachine extends WorkableElectricMultiblockMachine
 
         public ResourceTexture getComponentTexture(int index) {
             if (components.size() <= index) {
-                return GuiTextures.BLANK_TRANSPARENT;
+                return GUITextures.BLANK_TRANSPARENT;
             }
             return components.get(index).getComponentIcon();
         }

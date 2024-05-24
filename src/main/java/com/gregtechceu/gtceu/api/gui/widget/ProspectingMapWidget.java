@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.widget;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.misc.PacketProspecting;
 import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 import com.gregtechceu.gtceu.api.gui.texture.ProspectingTexture;
@@ -60,9 +60,9 @@ public class ProspectingMapWidget extends WidgetGroup implements SearchComponent
         int imageWidth = (chunkRadius * 2 - 1) * 16;
         int imageHeight = (chunkRadius * 2 - 1) * 16;
         addWidget(new ImageWidget(0, (height - imageHeight) / 2 - 4, imageWidth + 8, imageHeight + 8,
-                GuiTextures.BACKGROUND_INVERSE));
+                GUITextures.BACKGROUND_INVERSE));
         var group = (WidgetGroup) new WidgetGroup(imageWidth + 10, 0, width - (imageWidth + 10), height)
-                .setBackground(GuiTextures.BACKGROUND_INVERSE);
+                .setBackground(GUITextures.BACKGROUND_INVERSE);
         group.addWidget(itemList = new DraggableScrollableWidgetGroup(4, 28, group.getSize().width - 8,
                 group.getSize().height - 32)
                 .setYScrollBarWidth(2).setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(1)));

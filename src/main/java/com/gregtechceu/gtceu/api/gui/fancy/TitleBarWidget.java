@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.fancy;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
 import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
@@ -59,7 +59,7 @@ public class TitleBarWidget extends WidgetGroup {
         this.width = parentWidth - (2 * HORIZONTAL_MARGIN);
 
         addWidget(this.buttonGroup = new WidgetGroup(0, BORDER_SIZE, width, innerHeight));
-        buttonGroup.setBackground(GuiTextures.TITLE_BAR_BACKGROUND);
+        buttonGroup.setBackground(GUITextures.TITLE_BAR_BACKGROUND);
         buttonGroup.addWidget(this.backButton = new ButtonWidget(0, BORDER_SIZE, BTN_WIDTH, HEIGHT - BORDER_SIZE,
                 new TextTexture(" <").setDropShadow(false).setColor(ChatFormatting.BLACK.getColor()), onBackClicked)
                 .setHoverTooltips("gtceu.gui.title_bar.back"));
@@ -69,7 +69,7 @@ public class TitleBarWidget extends WidgetGroup {
                 .setHoverTooltips("gtceu.gui.title_bar.page_switcher"));
 
         addWidget(this.mainSection = new WidgetGroup(BTN_WIDTH, 0, width, HEIGHT));
-        mainSection.setBackground(GuiTextures.TITLE_BAR_BACKGROUND);
+        mainSection.setBackground(GUITextures.TITLE_BAR_BACKGROUND);
         mainSection.addWidget(this.tabIcon = new ImageWidget(
                 BORDER_SIZE + 1, BORDER_SIZE + 1,
                 innerHeight - 2, innerHeight - 2,

@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.electric;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
 import com.gregtechceu.gtceu.api.gui.editor.EditableUI;
@@ -379,7 +379,7 @@ public class BlockBreakerMachine extends TieredEnergyMachine
     protected static EditableUI<SlotWidget, BlockBreakerMachine> createBatterySlot() {
         return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
             var slotWidget = new SlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            slotWidget.setBackground(GUITextures.SLOT, GUITextures.CHARGER_OVERLAY);
             return slotWidget;
         }, (slotWidget, machine) -> {
             slotWidget.setHandlerSlot(machine.chargerInventory, 0);
@@ -400,12 +400,12 @@ public class BlockBreakerMachine extends TieredEnergyMachine
                     SlotWidget slotWidget = new SlotWidget();
                     slotWidget.initTemplate();
                     slotWidget.setSelfPosition(new Position(4 + x * 18, 4 + y * 18));
-                    slotWidget.setBackground(GuiTextures.SLOT);
+                    slotWidget.setBackground(GUITextures.SLOT);
                     slotWidget.setId("slot_" + index);
                     main.addWidget(slotWidget);
                 }
             }
-            main.setBackground(GuiTextures.BACKGROUND_INVERSE);
+            main.setBackground(GUITextures.BACKGROUND_INVERSE);
             return main;
         }, (group, machine) -> {
             WidgetUtils.widgetByIdForEach(group, "^slot_[0-9]+$", SlotWidget.class, slot -> {
@@ -427,7 +427,7 @@ public class BlockBreakerMachine extends TieredEnergyMachine
         if (toolTypes.contains(GTToolType.WRENCH)) {
             if (!player.isShiftKeyDown()) {
                 if (!hasFrontFacing() || side != getFrontFacing()) {
-                    return GuiTextures.TOOL_IO_FACING_ROTATION;
+                    return GUITextures.TOOL_IO_FACING_ROTATION;
                 }
             }
         }

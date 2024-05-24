@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration.ae2.util;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.integration.ae2.gui.widget.AEConfigWidget;
 
 import com.lowdragmc.lowdraglib.gui.widget.TextFieldWidget;
@@ -83,8 +83,8 @@ public class AmountSetSlot extends Widget {
     public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
         super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
         Position position = getPosition();
-        GuiTextures.BACKGROUND.draw(graphics, mouseX, mouseY, position.x, position.y, 80, 30);
+        GUITextures.BACKGROUND.draw(graphics, mouseX, mouseY, position.x, position.y, 80, 30);
         drawStringSized(graphics, "Amount", position.x + 3, position.y + 3, 0x404040, false, 1f, false);
-        GuiTextures.DISPLAY.draw(graphics, mouseX, mouseY, position.x + 3, position.y + 11, 65, 14);
+        GUITextures.DISPLAY.draw(graphics, mouseX, mouseY, position.x + 3, position.y + 11, 65, 14);
     }
 }
