@@ -13,26 +13,20 @@ import java.util.*;
 
 public class GTAddonFinder {
 
-    // Stored Variables
     private static final Logger LOGGER = LogManager.getLogger();
+
     protected static List<IGTAddon> cache = null;
     protected static Map<String, IGTAddon> modIdMap = new HashMap<>();
 
-    // Fetch Addons from the classpath
     public static List<IGTAddon> getAddons() {
-
-        // Addon instance cache check
         if (cache != null) { return cache; }
-        else cache = getInstances(GTAddon.class, IGTAddon.class);
-
-        // Map the modId string to the instance of the IGTAddon class
+        cache = getInstances(GTAddon.class, IGTAddon.class);
         for (IGTAddon addon : cache) {
             modIdMap.put(addon.addonModId(), addon);
         }
         return cache;
     }
 
-    // Fetch Addon by ModId String
     @Nullable
     public static IGTAddon getAddon(String modId) {
         return modIdMap.get(modId);
