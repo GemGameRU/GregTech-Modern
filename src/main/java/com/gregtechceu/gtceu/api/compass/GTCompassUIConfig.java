@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.api.gui.compass;
+package com.gregtechceu.gtceu.api.compass;
 
 import com.gregtechceu.gtceu.GTCEu;
 
