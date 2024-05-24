@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.capability;
 
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
 import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
 import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
 
@@ -12,7 +12,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 /**
  * Interface for FluidHandlerItemStacks which handle GT's unique fluid mechanics
  * 
- * @see FluidAttribute
+ * @see GTFluidAttribute
  * @see FluidAttributes
  * @see IAttributedFluid
  */

@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.capability;
 
 import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
 import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
 import com.gregtechceu.gtceu.utils.GTUtil;
 
@@ -31,7 +31,7 @@ public interface IPropertyFluidFilter extends Predicate<FluidStack> {
             FluidState state = attributedFluid.getState();
             if (!canContain(state)) return false;
 
-            for (FluidAttribute attribute : attributedFluid.getAttributes()) {
+            for (GTFluidAttribute attribute : attributedFluid.getAttributes()) {
                 if (!canContain(attribute)) {
                     return false;
                 }
@@ -61,7 +61,7 @@ public interface IPropertyFluidFilter extends Predicate<FluidStack> {
      * @param attribute the attribute to check
      * @return if the attribute can be contained
      */
-    boolean canContain(@NotNull FluidAttribute attribute);
+    boolean canContain(@NotNull GTFluidAttribute attribute);
 
     /**
      * Set the container as able to contain an attribute
@@ -69,11 +69,11 @@ public interface IPropertyFluidFilter extends Predicate<FluidStack> {
      * @param attribute  the attribute to change containment status for
      * @param canContain whether the attribute can be contained
      */
-    void setCanContain(@NotNull FluidAttribute attribute, boolean canContain);
+    void setCanContain(@NotNull GTFluidAttribute attribute, boolean canContain);
 
     @NotNull
     @UnmodifiableView
-    Collection<@NotNull FluidAttribute> getContainedAttributes();
+    Collection<@NotNull GTFluidAttribute> getContainedAttributes();
 
     /**
      * Append tooltips about containment info

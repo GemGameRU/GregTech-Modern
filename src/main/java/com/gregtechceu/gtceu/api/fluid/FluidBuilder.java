@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.fluid;
 
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
 import com.gregtechceu.gtceu.api.fluid.store.FluidStorageKey;
 import com.gregtechceu.gtceu.api.fluid.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.api.material.material.Material;
@@ -46,7 +46,7 @@ public class FluidBuilder {
     @Setter
     private String translation = null;
 
-    private final Collection<FluidAttribute> attributes = new ArrayList<>();
+    private final Collection<GTFluidAttribute> attributes = new ArrayList<>();
 
     @Setter
     private FluidState state = FluidState.LIQUID;
@@ -176,7 +176,7 @@ public class FluidBuilder {
      * @param attribute the attribute to add
      * @return this
      */
-    public @NotNull FluidBuilder attribute(@NotNull FluidAttribute attribute) {
+    public @NotNull FluidBuilder attribute(@NotNull GTFluidAttribute attribute) {
         this.attributes.add(attribute);
         return this;
     }
@@ -185,7 +185,7 @@ public class FluidBuilder {
      * @param attributes the attributes to add
      * @return this
      */
-    public @NotNull FluidBuilder attributes(@NotNull FluidAttribute @NotNull... attributes) {
+    public @NotNull FluidBuilder attributes(@NotNull GTFluidAttribute @NotNull... attributes) {
         Collections.addAll(this.attributes, attributes);
         return this;
     }

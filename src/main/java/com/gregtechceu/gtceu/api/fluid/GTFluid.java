@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.fluid;
 
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
 import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -35,7 +35,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public abstract class GTFluid extends FlowingFluid implements IAttributedFluid {
 
     @Getter
-    private final Collection<FluidAttribute> attributes = new ObjectLinkedOpenHashSet<>();
+    private final Collection<GTFluidAttribute> attributes = new ObjectLinkedOpenHashSet<>();
     @Getter
     private final FluidState state;
     private final Supplier<? extends Item> bucketItem;
@@ -58,7 +58,7 @@ public abstract class GTFluid extends FlowingFluid implements IAttributedFluid {
     }
 
     @Override
-    public void addAttribute(@NotNull FluidAttribute attribute) {
+    public void addAttribute(@NotNull GTFluidAttribute attribute) {
         attributes.add(attribute);
     }
 
