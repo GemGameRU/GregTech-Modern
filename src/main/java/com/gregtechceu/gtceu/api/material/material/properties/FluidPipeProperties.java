@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.api.material.material.properties;
 import com.gregtechceu.gtceu.api.capability.IPropertyFluidFilter;
 import com.gregtechceu.gtceu.api.fluid.FluidState;
 import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
 
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;
 
@@ -50,7 +50,7 @@ public class FluidPipeProperties implements IMaterialProperty<FluidPipePropertie
         this.maxFluidTemperature = maxFluidTemperature;
         this.throughput = throughput;
         this.gasProof = gasProof;
-        if (acidProof) setCanContain(FluidAttributes.ACID, true);
+        if (acidProof) setCanContain(GTFluidAttributes.ACID, true);
         this.cryoProof = cryoProof;
         this.plasmaProof = plasmaProof;
         this.channels = channels;
@@ -117,7 +117,7 @@ public class FluidPipeProperties implements IMaterialProperty<FluidPipePropertie
     }
 
     public boolean isAcidProof() {
-        return canContain(FluidAttributes.ACID);
+        return canContain(GTFluidAttributes.ACID);
     }
 
     @Override

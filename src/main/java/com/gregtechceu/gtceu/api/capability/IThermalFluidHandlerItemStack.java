@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.capability;
 
 import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
 import com.gregtechceu.gtceu.api.fluid.attribute.IAttributedFluid;
 
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
  * Interface for FluidHandlerItemStacks which handle GT's unique fluid mechanics
  * 
  * @see GTFluidAttribute
- * @see FluidAttributes
+ * @see GTFluidAttributes
  * @see IAttributedFluid
  */
 public interface IThermalFluidHandlerItemStack {
@@ -59,21 +59,21 @@ public interface IThermalFluidHandlerItemStack {
     boolean isGasProof();
 
     /**
-     * @see FluidAttributes
+     * @see GTFluidAttributes
      *
      * @return true if this fluid container allows acids, otherwise false
      */
     boolean isAcidProof();
 
     /**
-     * @see FluidAttributes
+     * @see GTFluidAttributes
      *
      * @return true if this fluid container allows cryogenics, otherwise false
      */
     boolean isCryoProof();
 
     /**
-     * @see FluidAttributes
+     * @see GTFluidAttributes
      *
      * @return true if this fluid container allows plasmas, otherwise false
      */

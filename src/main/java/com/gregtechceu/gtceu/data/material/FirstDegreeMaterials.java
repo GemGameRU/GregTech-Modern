@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.fluid.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.material.material.properties.BlastProperty.GasTier;
@@ -1109,20 +1109,20 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
 
         NitricAcid = new Material.Builder(GTCEu.id("nitric_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0xCCCC00)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Hydrogen, 1, Nitrogen, 1, Oxygen, 3)
                 .buildAndRegister();
 
         SulfuricAcid = new Material.Builder(GTCEu.id("sulfuric_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID).customStill())
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID).customStill())
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Hydrogen, 2, Sulfur, 1, Oxygen, 4)
                 .buildAndRegister();
 
         PhosphoricAcid = new Material.Builder(GTCEu.id("phosphoric_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0xDCDC01)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Hydrogen, 3, Phosphorus, 1, Oxygen, 4)
@@ -1147,7 +1147,7 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
 
         HypochlorousAcid = new Material.Builder(GTCEu.id("hypochlorous_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0x6F8A91)
                 .components(Hydrogen, 1, Chlorine, 1, Oxygen, 1)
                 .buildAndRegister();
@@ -1159,7 +1159,7 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
 
         HydrofluoricAcid = new Material.Builder(GTCEu.id("hydrofluoric_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0x0088AA)
                 .components(Hydrogen, 1, Fluorine, 1)
                 .buildAndRegister();
@@ -1230,7 +1230,7 @@ public class FirstDegreeMaterials {
         Neodymium.getProperty(PropertyKey.INGOT).setMagneticMaterial(NeodymiumMagnetic);
 
         HydrochloricAcid = new Material.Builder(GTCEu.id("hydrochloric_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID).customStill())
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID).customStill())
                 .components(Hydrogen, 1, Chlorine, 1)
                 .buildAndRegister();
 
@@ -1398,7 +1398,7 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
 
         FluoroantimonicAcid = new Material.Builder(GTCEu.id("fluoroantimonic_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID).customStill())
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID).customStill())
                 .components(Hydrogen, 2, Antimony, 1, Fluorine, 7)
                 .buildAndRegister();
 
