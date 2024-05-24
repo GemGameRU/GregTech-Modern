@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.api.cover.filter;
+package com.gregtechceu.gtceu.api.cover;
 
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.widget.ScrollablePhantomFluidWidget;

@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
+import com.gregtechceu.gtceu.api.cover.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.common.cover.data.ItemFilterMode;
 

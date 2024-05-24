@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
+import com.gregtechceu.gtceu.api.cover.IFluidFilter;
 
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
