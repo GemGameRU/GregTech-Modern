@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.common.item;
 
-import com.gregtechceu.gtceu.api.cover.filter.IItemFilter;
+import com.gregtechceu.gtceu.api.cover.IItemFilter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;

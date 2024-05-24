@@ -2,8 +2,8 @@ package com.gregtechceu.gtceu.common.cover;
 
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
-import com.gregtechceu.gtceu.api.cover.filter.IFluidFilter;
-import com.gregtechceu.gtceu.api.cover.filter.SimpleFluidFilter;
+import com.gregtechceu.gtceu.api.cover.IFluidFilter;
+import com.gregtechceu.gtceu.api.cover.SimpleFluidFilter;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.NumberInputWidget;

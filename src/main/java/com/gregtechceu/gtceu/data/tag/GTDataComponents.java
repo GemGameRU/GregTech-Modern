@@ -1,10 +1,10 @@
 package com.gregtechceu.gtceu.data.tag;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.cover.filter.SimpleFluidFilter;
-import com.gregtechceu.gtceu.api.cover.filter.SimpleItemFilter;
-import com.gregtechceu.gtceu.api.cover.filter.TagFluidFilter;
-import com.gregtechceu.gtceu.api.cover.filter.TagItemFilter;
+import com.gregtechceu.gtceu.api.cover.SimpleFluidFilter;
+import com.gregtechceu.gtceu.api.cover.SimpleItemFilter;
+import com.gregtechceu.gtceu.api.cover.TagFluidFilter;
+import com.gregtechceu.gtceu.api.cover.TagItemFilter;
 import com.gregtechceu.gtceu.api.item.component.IMaterialPartItem;
 import com.gregtechceu.gtceu.api.item.datacomponents.*;
 import com.gregtechceu.gtceu.utils.ResearchManager;
