@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.fluid;
 
 import com.gregtechceu.gtceu.api.capability.IPropertyFluidFilter;
 import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
@@ -32,7 +32,7 @@ public class PropertyFluidFilter implements IPropertyFluidFilter {
                                boolean plasmaProof) {
         this.maxFluidTemperature = maxFluidTemperature;
         this.gasProof = gasProof;
-        if (acidProof) setCanContain(FluidAttributes.ACID, true);
+        if (acidProof) setCanContain(GTFluidAttributes.ACID, true);
         this.cryoProof = cryoProof;
         this.plasmaProof = plasmaProof;
     }

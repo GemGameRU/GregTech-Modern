@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.GTCEu;
 
 import net.minecraft.network.chat.Component;
 
-public final class FluidAttributes {
+public final class GTFluidAttributes {
 
     /**
      * Attribute for acidic fluids.
@@ -13,5 +13,5 @@ public final class FluidAttributes {
             list -> list.add(Component.translatable("gtceu.fluid.type_acid.tooltip")),
             list -> list.add(Component.translatable("gtceu.fluid_pipe.acid_proof")));
 
-    private FluidAttributes() {}
+    private GTFluidAttributes() {}
 }

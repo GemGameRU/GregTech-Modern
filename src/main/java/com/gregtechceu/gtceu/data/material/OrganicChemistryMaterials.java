@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.data.material;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.fluid.FluidBuilder;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttributes;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.material.material.Material;
 import com.gregtechceu.gtceu.api.material.material.properties.HazardProperty;
@@ -341,7 +341,7 @@ public class OrganicChemistryMaterials {
                 .buildAndRegister();
 
         AceticAcid = new Material.Builder(GTCEu.id("acetic_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0xC8B4A0)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 2, Hydrogen, 4, Oxygen, 2)
@@ -427,7 +427,7 @@ public class OrganicChemistryMaterials {
                 .buildAndRegister();
 
         PhthalicAcid = new Material.Builder(GTCEu.id("phthalic_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .liquid(new FluidBuilder().attribute(GTFluidAttributes.ACID))
                 .color(0xD1D1D1)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 8, Hydrogen, 6, Oxygen, 4)
