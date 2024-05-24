@@ -8,16 +8,16 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.function.Consumer;
 
-public final class FluidAttribute {
+public final class GTFluidAttribute {
 
     private final ResourceLocation resourceLocation;
     private final Consumer<List<Component>> fluidTooltip;
     private final Consumer<List<Component>> containerTooltip;
     private final int hashCode;
 
-    public FluidAttribute(@NotNull ResourceLocation resourceLocation,
-                          @NotNull Consumer<List<@NotNull Component>> fluidTooltip,
-                          @NotNull Consumer<List<@NotNull Component>> containerTooltip) {
+    public GTFluidAttribute(@NotNull ResourceLocation resourceLocation,
+                            @NotNull Consumer<List<@NotNull Component>> fluidTooltip,
+                            @NotNull Consumer<List<@NotNull Component>> containerTooltip) {
         this.resourceLocation = resourceLocation;
         this.fluidTooltip = fluidTooltip;
         this.containerTooltip = containerTooltip;
@@ -41,7 +41,7 @@ public final class FluidAttribute {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FluidAttribute that = (FluidAttribute) o;
+        GTFluidAttribute that = (GTFluidAttribute) o;
 
         return resourceLocation.equals(that.getResourceLocation());
     }

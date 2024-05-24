@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.material.material.properties;
 
 import com.gregtechceu.gtceu.api.capability.IPropertyFluidFilter;
 import com.gregtechceu.gtceu.api.fluid.FluidState;
-import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttribute;
+import com.gregtechceu.gtceu.api.fluid.attribute.GTFluidAttribute;
 import com.gregtechceu.gtceu.api.fluid.attribute.FluidAttributes;
 
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;
@@ -43,7 +43,7 @@ public class FluidPipeProperties implements IMaterialProperty<FluidPipePropertie
     @Setter
     private boolean plasmaProof;
 
-    private final Object2BooleanMap<FluidAttribute> containmentPredicate = new Object2BooleanOpenHashMap<>();
+    private final Object2BooleanMap<GTFluidAttribute> containmentPredicate = new Object2BooleanOpenHashMap<>();
 
     public FluidPipeProperties(int maxFluidTemperature, int throughput, boolean gasProof, boolean acidProof,
                                boolean cryoProof, boolean plasmaProof, int channels) {
@@ -121,17 +121,17 @@ public class FluidPipeProperties implements IMaterialProperty<FluidPipePropertie
     }
 
     @Override
-    public boolean canContain(@NotNull FluidAttribute attribute) {
+    public boolean canContain(@NotNull GTFluidAttribute attribute) {
         return containmentPredicate.getBoolean(attribute);
     }
 
     @Override
-    public void setCanContain(@NotNull FluidAttribute attribute, boolean canContain) {
+    public void setCanContain(@NotNull GTFluidAttribute attribute, boolean canContain) {
         containmentPredicate.put(attribute, canContain);
     }
 
     @Override
-    public @NotNull @UnmodifiableView Collection<@NotNull FluidAttribute> getContainedAttributes() {
+    public @NotNull @UnmodifiableView Collection<@NotNull GTFluidAttribute> getContainedAttributes() {
         return containmentPredicate.keySet();
     }
 }

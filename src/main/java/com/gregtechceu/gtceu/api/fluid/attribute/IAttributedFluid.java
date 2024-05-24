@@ -14,12 +14,12 @@ public interface IAttributedFluid {
      */
     @NotNull
     @Unmodifiable
-    Collection<FluidAttribute> getAttributes();
+    Collection<GTFluidAttribute> getAttributes();
 
     /**
      * @param attribute the attribute to add
      */
-    void addAttribute(@NotNull FluidAttribute attribute);
+    void addAttribute(@NotNull GTFluidAttribute attribute);
 
     @NotNull
     FluidState getState();
