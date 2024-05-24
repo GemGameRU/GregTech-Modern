@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.item;
 
 import com.gregtechceu.gtceu.api.cover.IFluidFilter;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;
 
@@ -32,9 +32,9 @@ public record FluidFilterBehaviour(Function<ItemStack, IFluidFilter> filterCreat
     public ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) {
         var held = holder.getHeld();
         return new ModularUI(176, 157, holder, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(new LabelWidget(5, 3, held.getDescriptionId()))
                 .widget(IFluidFilter.loadFilter(held).openConfigurator((176 - 80) / 2, (60 - 55) / 2 + 15))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 75, true));
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7, 75, true));
     }
 }

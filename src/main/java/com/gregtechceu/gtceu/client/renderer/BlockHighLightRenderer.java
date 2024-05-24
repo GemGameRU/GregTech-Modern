@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.client.renderer;
 import com.gregtechceu.gtceu.api.blockentity.PipeBlockEntity;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.IGTTool;
 import com.gregtechceu.gtceu.api.item.PipeBlockItem;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
@@ -111,7 +111,7 @@ public class BlockHighLightRenderer {
                 RenderSystem.lineWidth(3);
 
                 drawGridOverlays(poseStack, buffer, target,
-                        side -> coverable.hasCover(side) ? null : GuiTextures.TOOL_ATTACH_COVER);
+                        side -> coverable.hasCover(side) ? null : GUITextures.TOOL_ATTACH_COVER);
 
                 poseStack.popPose();
             }

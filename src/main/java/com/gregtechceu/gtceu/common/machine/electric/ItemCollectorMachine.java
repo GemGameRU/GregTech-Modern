@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IWorkable;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.cover.IItemFilter;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
 import com.gregtechceu.gtceu.api.gui.editor.EditableUI;
@@ -442,7 +442,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
     protected static EditableUI<SlotWidget, ItemCollectorMachine> createBatterySlot() {
         return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
             var slotWidget = new SlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            slotWidget.setBackground(GUITextures.SLOT, GUITextures.CHARGER_OVERLAY);
             return slotWidget;
         }, (slotWidget, machine) -> {
             slotWidget.setHandlerSlot(machine.chargerInventory, 0);
@@ -464,7 +464,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
                     SlotWidget slotWidget = new SlotWidget();
                     slotWidget.initTemplate();
                     slotWidget.setSelfPosition(new Position(24 + x * 18, 4 + y * 18));
-                    slotWidget.setBackground(GuiTextures.SLOT);
+                    slotWidget.setBackground(GUITextures.SLOT);
                     slotWidget.setId("slot_" + index);
                     main.addWidget(slotWidget);
                 }
@@ -474,10 +474,10 @@ public class ItemCollectorMachine extends TieredEnergyMachine
             filterSlotWidget.initTemplate();
             filterSlotWidget
                     .setSelfPosition(new Position(4, (main.getSize().height - filterSlotWidget.getSize().height) / 2));
-            filterSlotWidget.setBackground(GuiTextures.SLOT, GuiTextures.FILTER_SLOT_OVERLAY);
+            filterSlotWidget.setBackground(GUITextures.SLOT, GUITextures.FILTER_SLOT_OVERLAY);
             filterSlotWidget.setId("filter_slot");
             main.addWidget(filterSlotWidget);
-            main.setBackground(GuiTextures.BACKGROUND_INVERSE);
+            main.setBackground(GUITextures.BACKGROUND_INVERSE);
             return main;
         }, (group, machine) -> {
             WidgetUtils.widgetByIdForEach(group, "^slot_[0-9]+$", SlotWidget.class, slot -> {
@@ -505,15 +505,15 @@ public class ItemCollectorMachine extends TieredEnergyMachine
         if (toolTypes.contains(GTToolType.WRENCH)) {
             if (!player.isShiftKeyDown()) {
                 if (!hasFrontFacing() || side != getFrontFacing()) {
-                    return GuiTextures.TOOL_IO_FACING_ROTATION;
+                    return GUITextures.TOOL_IO_FACING_ROTATION;
                 }
             }
         } else if (toolTypes.contains(GTToolType.SCREWDRIVER)) {
             if (side == getOutputFacingItems()) {
-                return GuiTextures.TOOL_ALLOW_INPUT;
+                return GUITextures.TOOL_ALLOW_INPUT;
             }
         } else if (toolTypes.contains(GTToolType.SOFT_MALLET)) {
-            return isWorkingEnabled ? GuiTextures.TOOL_PAUSE : GuiTextures.TOOL_START;
+            return isWorkingEnabled ? GUITextures.TOOL_PAUSE : GUITextures.TOOL_START;
         }
 
         return super.sideTips(player, toolTypes, side);

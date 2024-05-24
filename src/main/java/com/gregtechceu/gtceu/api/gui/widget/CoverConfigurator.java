@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.api.gui.widget;
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyConfigurator;
 import com.gregtechceu.gtceu.data.item.GTItems;
 
@@ -46,7 +46,7 @@ public class CoverConfigurator implements IFancyConfigurator {
         if (side != null) {
             if (coverable.getCoverAtSide(side) instanceof IUICover iuiCover) {
                 Widget coverConfigurator = iuiCover.createUIWidget();
-                coverConfigurator.setBackground(GuiTextures.BACKGROUND);
+                coverConfigurator.setBackground(GUITextures.BACKGROUND);
                 coverConfigurator.setSelfPosition(new Position(4, -4));
                 group.addWidget(coverConfigurator);
                 group.setSize(new Size(Math.max(120, coverConfigurator.getSize().width + 8),

@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.item;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.capability.ElectricItem;
 import com.gregtechceu.gtceu.api.item.component.ElectricStats;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;
@@ -779,7 +779,7 @@ public interface IGTTool extends IItemUIFactory, ItemLike {
     default ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) {
         ItemStack held = holder.getHeld();
         AoESymmetrical definition = getAoEDefinition(held);
-        return new ModularUI(120, 80, holder, entityPlayer).background(GuiTextures.BACKGROUND)
+        return new ModularUI(120, 80, holder, entityPlayer).background(GUITextures.BACKGROUND)
                 .widget(new LabelWidget(6, 10, "item.gtceu.tool.aoe.columns"))
                 .widget(new LabelWidget(49, 10, "item.gtceu.tool.aoe.rows"))
                 .widget(new LabelWidget(79, 10, "item.gtceu.tool.aoe.layers"))

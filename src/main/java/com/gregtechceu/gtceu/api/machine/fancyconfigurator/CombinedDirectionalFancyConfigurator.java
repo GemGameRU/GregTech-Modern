@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.fancy.FancyMachineUIWidget;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyUIProvider;
@@ -54,7 +54,7 @@ public class CombinedDirectionalFancyConfigurator implements IFancyUIProvider {
 
     @Override
     public IGuiTexture getTabIcon() {
-        return GuiTextures.TOOL_COVER_SETTINGS;
+        return GUITextures.TOOL_COVER_SETTINGS;
     }
 
     @Override

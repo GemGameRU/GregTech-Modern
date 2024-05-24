@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.steam;
 
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.steam.SteamBoilerMachine;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableFluidTank;
@@ -82,7 +82,7 @@ public class SteamLiquidBoilerMachine extends SteamBoilerMachine {
                 .widget(new TankWidget(fuelTank.getStorages()[0], 119, 26, 10, 54, true, true)
                         .setShowAmount(false)
                         .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP)
-                        .setBackground(GuiTextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)));
+                        .setBackground(GUITextures.PROGRESS_BAR_BOILER_EMPTY.get(isHighPressure)));
     }
 
     @Override

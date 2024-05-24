@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.feature.multiblock;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyTooltip;
 import com.gregtechceu.gtceu.api.gui.fancy.TooltipsPanel;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
@@ -205,7 +205,7 @@ public interface IRotorHolderMachine extends IMultiPart {
     @Override
     default void attachTooltips(TooltipsPanel tooltipsPanel) {
         tooltipsPanel.attachTooltips(new IFancyTooltip.Basic(
-                () -> GuiTextures.INDICATOR_NO_STEAM.get(false),
+                () -> GUITextures.INDICATOR_NO_STEAM.get(false),
                 () -> List.of(Component.translatable("gtceu.multiblock.universal.muffler_obstructed")
                         .setStyle(Style.EMPTY.withColor(ChatFormatting.RED))),
                 () -> !isFrontFaceFree(),

@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.api.gui.widget.directional.handlers;
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.ConfiguratorPanel;
 import com.gregtechceu.gtceu.api.gui.fancy.FancyMachineUIWidget;
 import com.gregtechceu.gtceu.api.gui.widget.CoverConfigurator;
@@ -37,7 +37,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class CoverableConfigHandler implements IDirectionalConfigHandler {
 
-    private static final IGuiTexture CONFIG_BTN_TEXTURE = new GuiTextureGroup(GuiTextures.IO_CONFIG_COVER_SETTINGS);
+    private static final IGuiTexture CONFIG_BTN_TEXTURE = new GuiTextureGroup(GUITextures.IO_CONFIG_COVER_SETTINGS);
 
     private final ICoverableBlock machine;
     private CustomItemStackHandler transfer;
@@ -80,7 +80,7 @@ public class CoverableConfigHandler implements IDirectionalConfigHandler {
 
         group.addWidget(slotWidget = new SlotWidget(transfer, 0, 19, 0)
                 .setChangeListener(this::coverItemChanged)
-                .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.IO_CONFIG_COVER_SLOT_OVERLAY)));
+                .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT, GUITextures.IO_CONFIG_COVER_SLOT_OVERLAY)));
         group.addWidget(new PredicatedButtonWidget(0, 0, 18, 18, CONFIG_BTN_TEXTURE, this::toggleConfigTab,
                 () -> side != null && coverBehavior != null && machine.getCoverAtSide(side) instanceof IUICover));
 
@@ -161,7 +161,7 @@ public class CoverableConfigHandler implements IDirectionalConfigHandler {
 
             @Override
             public IGuiTexture getIcon() {
-                return GuiTextures.CLOSE_ICON;
+                return GUITextures.CLOSE_ICON;
             }
 
             @Override

@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.electric;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
@@ -267,19 +267,19 @@ public class PumpMachine extends TieredEnergyMachine implements IAutoOutputFluid
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
-                .widget(new ImageWidget(7, 16, 81, 55, GuiTextures.DISPLAY))
+                .background(GUITextures.BACKGROUND)
+                .widget(new ImageWidget(7, 16, 81, 55, GUITextures.DISPLAY))
                 .widget(new LabelWidget(11, 20, "gtceu.gui.fluid_amount"))
                 .widget(new LabelWidget(11, 30, () -> cache.getFluidInTank(0).getAmount() + "").setTextColor(-1)
                         .setDropShadow(true))
                 .widget(new LabelWidget(6, 6, getBlockState().getBlock().getDescriptionId()))
                 .widget(new TankWidget(cache.getStorages()[0], 90, 35, true, true)
-                        .setBackground(GuiTextures.FLUID_SLOT))
+                        .setBackground(GUITextures.FLUID_SLOT))
                 .widget(new ToggleButtonWidget(7, 53, 18, 18,
-                        GuiTextures.BUTTON_FLUID_OUTPUT, this::isAutoOutputFluids, this::setAutoOutputFluids)
+                        GUITextures.BUTTON_FLUID_OUTPUT, this::isAutoOutputFluids, this::setAutoOutputFluids)
                         .setShouldUseBaseBackground()
                         .setTooltipText("gtceu.gui.fluid_auto_output.tooltip"))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 84, true));
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7, 84, true));
     }
 
     //////////////////////////////////////
@@ -290,7 +290,7 @@ public class PumpMachine extends TieredEnergyMachine implements IAutoOutputFluid
         if (toolTypes.contains(GTToolType.WRENCH)) {
             if (player.isShiftKeyDown()) {
                 if (hasFrontFacing() && side != this.getFrontFacing() && isFacingValid(side)) {
-                    return GuiTextures.TOOL_IO_FACING_ROTATION;
+                    return GUITextures.TOOL_IO_FACING_ROTATION;
                 }
             }
         }

@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration.ae2.gui.widget;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.client.TooltipsHandler;
 
 import com.lowdragmc.lowdraglib.Platform;
@@ -48,8 +48,8 @@ public class AEFluidDisplayWidget extends Widget {
         super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
         Position position = getPosition();
         GenericStack fluid = this.gridWidget.getAt(this.index);
-        GuiTextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
-        GuiTextures.NUMBER_BACKGROUND.draw(graphics, mouseX, mouseY, position.x + 18, position.y, 140, 18);
+        GUITextures.FLUID_SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
+        GUITextures.NUMBER_BACKGROUND.draw(graphics, mouseX, mouseY, position.x + 18, position.y, 140, 18);
         int stackX = position.x + 1;
         int stackY = position.y + 1;
         if (fluid != null) {

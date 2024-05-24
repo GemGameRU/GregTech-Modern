@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.compass;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.integration.GTRecipeWidget;
 
@@ -36,7 +36,7 @@ public class GTRecipeViewCreator implements RecipeComponent.RecipeViewCreator {
             var widget = new GTRecipeWidget((RecipeHolder<GTRecipe>) recipe);
             widget.addSelfPosition(4, 4);
             var recipeGroup = new WidgetGroup(0, 0, widget.getSize().width + 8, widget.getSize().height + 8);
-            recipeGroup.setBackground(GuiTextures.BACKGROUND);
+            recipeGroup.setBackground(GUITextures.BACKGROUND);
             recipeGroup.addWidget(widget);
             return recipeGroup;
 

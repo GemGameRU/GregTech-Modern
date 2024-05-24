@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.TickableSubscription;
@@ -155,7 +155,7 @@ public class FluidHatchPartMachine extends TieredIOPartMachine {
 
     protected Widget createSingleSlotGUI() {
         var group = new WidgetGroup(0, 0, 89, 63);
-        group.addWidget(new ImageWidget(4, 4, 81, 55, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(4, 4, 81, 55, GUITextures.DISPLAY));
         TankWidget tankWidget;
 
         // Add input/output-specific widgets
@@ -173,25 +173,25 @@ public class FluidHatchPartMachine extends TieredIOPartMachine {
                             newFluid.setAmount(1);
                             this.tank.setLocked(true, newFluid);
                         }
-                    }).setShowAmount(true).setDrawHoverTips(true).setBackground(GuiTextures.FLUID_SLOT));
+                    }).setShowAmount(true).setDrawHoverTips(true).setBackground(GUITextures.FLUID_SLOT));
 
             group.addWidget(new ToggleButtonWidget(7, 40, 18, 18,
-                    GuiTextures.BUTTON_LOCK, this.tank::isLocked, this.tank::setLocked)
+                    GUITextures.BUTTON_LOCK, this.tank::isLocked, this.tank::setLocked)
                     .setTooltipText("gtceu.gui.fluid_lock.tooltip")
                     .setShouldUseBaseBackground())
                     // ...and add the actual tank widget separately.
                     .addWidget(new TankWidget(tank.getStorages()[0], 67, 22, 18, 18, true, io.support(IO.IN))
-                            .setShowAmount(true).setDrawHoverTips(true).setBackground(GuiTextures.FLUID_SLOT));
+                            .setShowAmount(true).setDrawHoverTips(true).setBackground(GUITextures.FLUID_SLOT));
         } else {
             group.addWidget(tankWidget = new TankWidget(tank.getStorages()[0], 67, 22, 18, 18, true, io.support(IO.IN))
-                    .setShowAmount(true).setDrawHoverTips(true).setBackground(GuiTextures.FLUID_SLOT));
+                    .setShowAmount(true).setDrawHoverTips(true).setBackground(GUITextures.FLUID_SLOT));
         }
 
         group.addWidget(new LabelWidget(8, 8, "gtceu.gui.fluid_amount"))
                 .addWidget(new LabelWidget(8, 18, () -> getFluidAmountText(tankWidget)))
                 .addWidget(new LabelWidget(8, 28, () -> getFluidNameText(tankWidget).getString()));
 
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        group.setBackground(GUITextures.BACKGROUND_INVERSE);
         return group;
     }
 
@@ -238,11 +238,11 @@ public class FluidHatchPartMachine extends TieredIOPartMachine {
             for (int x = 0; x < rowSize; x++) {
                 container.addWidget(
                         new TankWidget(tank.getStorages()[index++], 4 + x * 18, 4 + y * 18, true, io.support(IO.IN))
-                                .setBackground(GuiTextures.FLUID_SLOT));
+                                .setBackground(GUITextures.FLUID_SLOT));
             }
         }
 
-        container.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        container.setBackground(GUITextures.BACKGROUND_INVERSE);
         group.addWidget(container);
 
         return group;

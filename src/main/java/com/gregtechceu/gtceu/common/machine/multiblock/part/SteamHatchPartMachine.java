@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableFluidTank;
@@ -44,15 +44,15 @@ public class SteamHatchPartMachine extends FluidHatchPartMachine {
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND_STEAM.get(IS_STEEL))
-                .widget(new ImageWidget(7, 16, 81, 55, GuiTextures.DISPLAY_STEAM.get(IS_STEEL)))
+                .background(GUITextures.BACKGROUND_STEAM.get(IS_STEEL))
+                .widget(new ImageWidget(7, 16, 81, 55, GUITextures.DISPLAY_STEAM.get(IS_STEEL)))
                 .widget(new LabelWidget(11, 20, "gtceu.gui.fluid_amount"))
                 .widget(new LabelWidget(11, 30, () -> tank.getFluidInTank(0).getAmount() + "").setTextColor(-1)
                         .setDropShadow(true))
                 .widget(new LabelWidget(6, 6, getBlockState().getBlock().getDescriptionId()))
                 .widget(new TankWidget(tank.getStorages()[0], 90, 35, true, true)
-                        .setBackground(GuiTextures.FLUID_SLOT))
+                        .setBackground(GUITextures.FLUID_SLOT))
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(),
-                        GuiTextures.SLOT_STEAM.get(IS_STEEL), 7, 84, true));
+                        GUITextures.SLOT_STEAM.get(IS_STEEL), 7, 84, true));
     }
 }

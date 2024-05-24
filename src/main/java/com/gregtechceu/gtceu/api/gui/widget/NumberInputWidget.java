@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.widget;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.utils.GTUtil;
 
 import com.lowdragmc.lowdraglib.LDLib;
@@ -116,7 +116,7 @@ public abstract class NumberInputWidget<T extends Number> extends WidgetGroup {
         int textFieldWidth = this.getSize().width - (2 * buttonWidth) - 4;
 
         this.addWidget(new ButtonWidget(0, 0, buttonWidth, 20,
-                new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, getButtonTexture("-", buttonWidth)),
+                new GuiTextureGroup(GUITextures.VANILLA_BUTTON, getButtonTexture("-", buttonWidth)),
                 this::decrease).setHoverTooltips("gui.widget.incrementButton.default_tooltip"));
 
         this.textField = new TextFieldWidget(buttonWidth + 2, 0, textFieldWidth, 20,
@@ -126,7 +126,7 @@ public abstract class NumberInputWidget<T extends Number> extends WidgetGroup {
         this.addWidget(this.textField);
 
         this.addWidget(new ButtonWidget(buttonWidth + textFieldWidth + 4, 0, buttonWidth, 20,
-                new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, getButtonTexture("+", buttonWidth)),
+                new GuiTextureGroup(GUITextures.VANILLA_BUTTON, getButtonTexture("+", buttonWidth)),
                 this::increase).setHoverTooltips("gui.widget.incrementButton.default_tooltip"));
     }
 

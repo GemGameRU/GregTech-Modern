@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.widget;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 
 import com.lowdragmc.lowdraglib.gui.texture.GuiTextureGroup;
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
@@ -27,7 +27,7 @@ public class ToggleButtonWidget extends SwitchWidget {
 
     public ToggleButtonWidget(int xPosition, int yPosition, int width, int height, BooleanSupplier isPressedCondition,
                               BooleanConsumer setPressedExecutor) {
-        this(xPosition, yPosition, width, height, GuiTextures.VANILLA_BUTTON, isPressedCondition, setPressedExecutor);
+        this(xPosition, yPosition, width, height, GUITextures.VANILLA_BUTTON, isPressedCondition, setPressedExecutor);
     }
 
     public ToggleButtonWidget(int xPosition, int yPosition, int width, int height, IGuiTexture buttonTexture,
@@ -47,8 +47,8 @@ public class ToggleButtonWidget extends SwitchWidget {
     public ToggleButtonWidget setShouldUseBaseBackground() {
         if (texture != null) {
             setTexture(
-                    new GuiTextureGroup(GuiTextures.TOGGLE_BUTTON_BACK.getSubTexture(0, 0, 1, 0.5), texture),
-                    new GuiTextureGroup(GuiTextures.TOGGLE_BUTTON_BACK.getSubTexture(0, 0.5, 1, 0.5), texture));
+                    new GuiTextureGroup(GUITextures.TOGGLE_BUTTON_BACK.getSubTexture(0, 0, 1, 0.5), texture),
+                    new GuiTextureGroup(GUITextures.TOGGLE_BUTTON_BACK.getSubTexture(0, 0.5, 1, 0.5), texture));
         }
         return this;
     }

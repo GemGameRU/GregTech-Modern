@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.widget.directional;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.FancyMachineUIWidget;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.utils.GTUtil;
@@ -66,7 +66,7 @@ public class CombinedDirectionalConfigurator extends WidgetGroup {
     public void initWidget() {
         super.initWidget();
 
-        addWidget(imageWidget = new ImageWidget(0, 0, width, height, GuiTextures.BACKGROUND_INVERSE));
+        addWidget(imageWidget = new ImageWidget(0, 0, width, height, GUITextures.BACKGROUND_INVERSE));
         addWidget(sceneWidget = createSceneWidget());
 
         for (IDirectionalConfigHandler configHandler : configHandlers) {

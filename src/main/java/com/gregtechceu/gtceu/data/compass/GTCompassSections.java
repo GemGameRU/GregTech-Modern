@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.data.compass;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.CompassSection;
@@ -29,7 +29,7 @@ public class GTCompassSections {
     private static int priority = 0;
 
     public final static CompassSection INTRODUCTION = CompassSection.create("introduction")
-            .icon(() -> GuiTextures.GREGTECH_LOGO)
+            .icon(() -> GUITextures.GREGTECH_LOGO)
             .priority(priority++)
             .register();
 
@@ -110,7 +110,7 @@ public class GTCompassSections {
             int finalI = i;
             TIER[i] = CompassSection.create(GTValues.VN[i].toLowerCase(Locale.ROOT))
                     .icon(() -> new ItemStackTexture(GTMachines.HULL[finalI].asStack()))
-                    .background(() -> GuiTextures.DISPLAY)
+                    .background(() -> GUITextures.DISPLAY)
                     .lang(GTValues.VNF[i] + " Voltage")
                     .priority(priority++)
                     .register();

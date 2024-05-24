@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.IMiner;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.WidgetUtils;
 import com.gregtechceu.gtceu.api.gui.editor.EditableMachineUI;
 import com.gregtechceu.gtceu.api.gui.editor.EditableUI;
@@ -244,7 +244,7 @@ public class MinerMachine extends WorkableTieredMachine
                     var slot = new SlotWidget();
                     slot.initTemplate();
                     slot.setSelfPosition(new Position(x * 18, y * 18));
-                    slot.setBackground(GuiTextures.SLOT);
+                    slot.setBackground(GUITextures.SLOT);
                     slot.setId("slot_" + index);
                     slots.addWidget(slot);
                 }
@@ -257,9 +257,9 @@ public class MinerMachine extends WorkableTieredMachine
             var container = new WidgetGroup(0, 0, 117, height);
             container.addWidget(new DraggableScrollableWidgetGroup(4, 4, container.getSize().width - 8,
                     container.getSize().height - 8)
-                    .setBackground(GuiTextures.DISPLAY)
+                    .setBackground(GUITextures.DISPLAY)
                     .addWidget(componentPanel));
-            container.setBackground(GuiTextures.BACKGROUND_INVERSE);
+            container.setBackground(GUITextures.BACKGROUND_INVERSE);
             group.addWidget(container);
             group.addWidget(slots);
             return group;
@@ -284,7 +284,7 @@ public class MinerMachine extends WorkableTieredMachine
     protected static EditableUI<SlotWidget, MinerMachine> createBatterySlot() {
         return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
             var slotWidget = new SlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            slotWidget.setBackground(GUITextures.SLOT, GUITextures.CHARGER_OVERLAY);
             return slotWidget;
         }, (slotWidget, machine) -> {
             slotWidget.setHandlerSlot(machine.chargerInventory, 0);

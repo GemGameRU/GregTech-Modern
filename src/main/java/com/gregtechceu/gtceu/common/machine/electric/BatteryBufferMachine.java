@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.TieredEnergyMachine;
@@ -117,12 +117,12 @@ public class BatteryBufferMachine extends TieredEnergyMachine
             colSize = 2;
         }
         var template = new WidgetGroup(0, 0, 18 * rowSize + 8, 18 * colSize + 8);
-        template.setBackground(GuiTextures.BACKGROUND_INVERSE);
+        template.setBackground(GUITextures.BACKGROUND_INVERSE);
         int index = 0;
         for (int y = 0; y < colSize; y++) {
             for (int x = 0; x < rowSize; x++) {
                 template.addWidget(new SlotWidget(batteryInventory, index++, 4 + x * 18, 4 + y * 18, true, true)
-                        .setBackgroundTexture(new GuiTextureGroup(GuiTextures.SLOT, GuiTextures.BATTERY_OVERLAY)));
+                        .setBackgroundTexture(new GuiTextureGroup(GUITextures.SLOT, GUITextures.BATTERY_OVERLAY)));
             }
         }
 

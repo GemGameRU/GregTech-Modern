@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.integration.ae2.gui.widget;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.utils.Position;
@@ -39,8 +39,8 @@ public class AEItemDisplayWidget extends Widget {
         super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
         Position position = getPosition();
         GenericStack item = this.gridWidget.getAt(this.index);
-        GuiTextures.SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
-        GuiTextures.NUMBER_BACKGROUND.draw(graphics, mouseX, mouseY, position.x + 18, position.y, 140, 18);
+        GUITextures.SLOT.draw(graphics, mouseX, mouseY, position.x, position.y, 18, 18);
+        GUITextures.NUMBER_BACKGROUND.draw(graphics, mouseX, mouseY, position.x + 18, position.y, 140, 18);
         int stackX = position.x + 1;
         int stackY = position.y + 1;
         if (item != null) {

@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyConfigurator;
 import com.gregtechceu.gtceu.api.gui.widget.PredicatedButtonWidget;
 import com.gregtechceu.gtceu.api.machine.feature.IOverclockMachine;
@@ -47,7 +47,7 @@ public class OverclockFancyConfigurator implements IFancyConfigurator {
 
     @Override
     public IGuiTexture getIcon() {
-        return currentTier <= GTValues.UV ? GuiTextures.TIER[currentTier].copy().scale(1.2f) :
+        return currentTier <= GTValues.UV ? GUITextures.TIER[currentTier].copy().scale(1.2f) :
                 new TextTexture(GTValues.VNF[this.currentTier]).setDropShadow(false);
     }
 
@@ -87,18 +87,18 @@ public class OverclockFancyConfigurator implements IFancyConfigurator {
             @Override
             public void initWidget() {
                 super.initWidget();
-                setBackground(GuiTextures.BACKGROUND_INVERSE);
+                setBackground(GUITextures.BACKGROUND_INVERSE);
                 addWidget(new PredicatedButtonWidget(5, 5, 10, 20,
-                        new GuiTextureGroup(GuiTextures.BUTTON, Icons.LEFT.copy().scale(0.7f)), cd -> {
+                        new GuiTextureGroup(GUITextures.BUTTON, Icons.LEFT.copy().scale(0.7f)), cd -> {
                             if (!cd.isRemote) {
                                 overclockMachine.setOverclockTier(currentTier - 1);
                             }
                         }, () -> currentTier > overclockMachine.getMinOverclockTier()));
                 addWidget(new ImageWidget(20, 5, 120 - 5 - 10 - 5 - 20, 20,
-                        () -> new GuiTextureGroup(GuiTextures.DISPLAY_FRAME,
+                        () -> new GuiTextureGroup(GUITextures.DISPLAY_FRAME,
                                 new TextTexture(GTValues.VNF[currentTier]))));
                 addWidget(new PredicatedButtonWidget(120 - 5 - 10, 5, 10, 20,
-                        new GuiTextureGroup(GuiTextures.BUTTON, Icons.RIGHT.copy().scale(0.7f)), cd -> {
+                        new GuiTextureGroup(GUITextures.BUTTON, Icons.RIGHT.copy().scale(0.7f)), cd -> {
                             if (!cd.isRemote) {
                                 overclockMachine.setOverclockTier(currentTier + 1);
                             }
@@ -140,7 +140,7 @@ public class OverclockFancyConfigurator implements IFancyConfigurator {
                         }
                     }));
                     lightGroup.addWidget(new ImageWidget(0, 0, 8, 8,
-                            () -> currentTier >= finalTier ? GuiTextures.LIGHT_ON : GuiTextures.LIGHT_OFF));
+                            () -> currentTier >= finalTier ? GUITextures.LIGHT_ON : GUITextures.LIGHT_OFF));
                     lightGroups.put(tier, lightGroup);
                     addWidget(lightGroup);
                     x += 10;

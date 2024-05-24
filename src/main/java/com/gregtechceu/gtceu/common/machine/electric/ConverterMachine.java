@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.electric;
 
 import com.gregtechceu.gtceu.api.capability.FeCompat;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -97,7 +97,7 @@ public class ConverterMachine extends TieredMachine implements IExplosionMachine
     @Override
     public ResourceTexture sideTips(Player player, Set<GTToolType> toolTypes, Direction side) {
         if (toolTypes.contains(GTToolType.SOFT_MALLET)) {
-            return this.isFeToEu() ? GuiTextures.TOOL_SWITCH_CONVERTER_NATIVE : GuiTextures.TOOL_SWITCH_CONVERTER_EU;
+            return this.isFeToEu() ? GUITextures.TOOL_SWITCH_CONVERTER_NATIVE : GUITextures.TOOL_SWITCH_CONVERTER_EU;
         }
         return super.sideTips(player, toolTypes, side);
     }

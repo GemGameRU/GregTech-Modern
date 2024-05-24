@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.fancy;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
 import com.lowdragmc.lowdraglib.LDLib;
@@ -75,7 +75,7 @@ public class FancyMachineUIWidget extends WidgetGroup {
         addWidget(this.configuratorPanel = new ConfiguratorPanel(-(24 + 2), height));
         this.pageSwitcher = new PageSwitcher(this::switchPage);
 
-        setBackground(GuiTextures.BACKGROUND.copy()
+        setBackground(GUITextures.BACKGROUND.copy()
                 .setColor(Long.decode(ConfigHolder.INSTANCE.client.defaultUIColor).intValue() | 0xFF000000));
     }
 

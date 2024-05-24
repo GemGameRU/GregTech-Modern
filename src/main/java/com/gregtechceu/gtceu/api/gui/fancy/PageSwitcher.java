@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.fancy;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
 import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
@@ -44,7 +44,7 @@ public class PageSwitcher implements IFancyUIProvider {
 
         var scrollableGroup = new DraggableScrollableWidgetGroup(10, 10, 156, 146);
         scrollableGroup.setYScrollBarWidth(8);
-        scrollableGroup.setYBarStyle(GuiTextures.SLIDER_BACKGROUND_VERTICAL, GuiTextures.BUTTON);
+        scrollableGroup.setYBarStyle(GUITextures.SLIDER_BACKGROUND_VERTICAL, GUITextures.BUTTON);
         container.addWidget(scrollableGroup);
 
         var groupedPages = pages.stream().collect(Collectors.groupingBy(
@@ -67,7 +67,7 @@ public class PageSwitcher implements IFancyUIProvider {
                         var y = currentY.addAndGet(index % 5 == 0 ? 30 : 0); // Jump to the next row every 5 parts
 
                         var pageWidget = new WidgetGroup((index % 5) * 30, y, 25, 25);
-                        pageWidget.addWidget(new ButtonWidget(0, 0, 25, 25, GuiTextures.BACKGROUND,
+                        pageWidget.addWidget(new ButtonWidget(0, 0, 25, 25, GUITextures.BACKGROUND,
                                 clickData -> onPageSwitched.accept(page)));
                         pageWidget.addWidget(new ImageWidget(4, 4, 17, 17, page.getTabIcon()));
                         // For some reason, this doesn't work in any other way:

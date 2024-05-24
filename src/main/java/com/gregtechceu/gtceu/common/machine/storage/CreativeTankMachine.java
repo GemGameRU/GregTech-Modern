@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.storage;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableFluidTank;
 import com.gregtechceu.gtceu.api.transfer.fluid.InfiniteFluidTransferProxy;
@@ -83,9 +83,9 @@ public class CreativeTankMachine extends QuantumTankMachine {
         var group = new WidgetGroup(0, 0, 176, 131);
         group.addWidget(new PhantomFluidWidget(this.cache.getStorages()[0], 0, 36, 6, 18, 18,
                 () -> this.cache.getStorages()[0].getFluid(), (fluid) -> this.cache.getStorages()[0].setFluid(fluid))
-                .setShowAmount(false).setBackground(GuiTextures.FLUID_SLOT));
+                .setShowAmount(false).setBackground(GUITextures.FLUID_SLOT));
         group.addWidget(new LabelWidget(7, 9, "gtceu.creative.tank.fluid"));
-        group.addWidget(new ImageWidget(7, 45, 154, 14, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(7, 45, 154, 14, GUITextures.DISPLAY));
         group.addWidget(new TextFieldWidget(9, 47, 152, 10, () -> String.valueOf(mBPerCycle), value -> {
             if (!value.isEmpty()) {
                 mBPerCycle = Integer.parseInt(value);
@@ -93,7 +93,7 @@ public class CreativeTankMachine extends QuantumTankMachine {
         }).setMaxStringLength(11).setNumbersOnly(1, Integer.MAX_VALUE));
         group.addWidget(new LabelWidget(7, 28, "gtceu.creative.tank.mbpc"));
 
-        group.addWidget(new ImageWidget(7, 82, 154, 14, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(7, 82, 154, 14, GUITextures.DISPLAY));
         group.addWidget(new TextFieldWidget(9, 84, 152, 10, () -> String.valueOf(ticksPerCycle), value -> {
             if (!value.isEmpty()) {
                 ticksPerCycle = Integer.parseInt(value);

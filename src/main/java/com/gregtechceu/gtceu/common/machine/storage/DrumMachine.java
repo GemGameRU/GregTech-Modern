@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -270,7 +270,7 @@ public class DrumMachine extends MetaMachine implements IAutoOutputFluid, IDropS
     public ResourceTexture sideTips(Player player, Set<GTToolType> toolTypes, Direction side) {
         if (toolTypes.contains(GTToolType.SCREWDRIVER)) {
             if (side == getOutputFacingFluids()) {
-                return isAutoOutputFluids() ? GuiTextures.TOOL_DISABLE_AUTO_OUTPUT : GuiTextures.TOOL_AUTO_OUTPUT;
+                return isAutoOutputFluids() ? GUITextures.TOOL_DISABLE_AUTO_OUTPUT : GUITextures.TOOL_AUTO_OUTPUT;
             }
         }
         return super.sideTips(player, toolTypes, side);

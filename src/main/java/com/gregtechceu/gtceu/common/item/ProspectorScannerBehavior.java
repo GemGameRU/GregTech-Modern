@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.item;
 
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 import com.gregtechceu.gtceu.api.gui.widget.ProspectingMapWidget;
 import com.gregtechceu.gtceu.api.item.component.IAddInformation;
@@ -91,15 +91,15 @@ public class ProspectorScannerBehavior implements IItemUIFactory, IInteractionIt
         var mode = getMode(entityPlayer.getItemInHand(InteractionHand.MAIN_HAND));
         var map = new ProspectingMapWidget(4, 4, 332 - 8, 200 - 8, radius, mode, 1);
         return new ModularUI(332, 200, holder, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(map)
                 .widget(new SwitchWidget(-20, 4, 18, 18, (cd, pressed) -> map.setDarkMode(pressed))
                         .setSupplier(map::isDarkMode)
                         .setTexture(
-                                new GuiTextureGroup(GuiTextures.BUTTON,
-                                        GuiTextures.PROGRESS_BAR_SOLAR_STEAM.get(true).copy()
+                                new GuiTextureGroup(GUITextures.BUTTON,
+                                        GUITextures.PROGRESS_BAR_SOLAR_STEAM.get(true).copy()
                                                 .getSubTexture(0, 0.5, 1, 0.5).scale(0.8f)),
-                                new GuiTextureGroup(GuiTextures.BUTTON, GuiTextures.PROGRESS_BAR_SOLAR_STEAM.get(true)
+                                new GuiTextureGroup(GUITextures.BUTTON, GUITextures.PROGRESS_BAR_SOLAR_STEAM.get(true)
                                         .copy().getSubTexture(0, 0, 1, 0.5).scale(0.8f))));
     }
 

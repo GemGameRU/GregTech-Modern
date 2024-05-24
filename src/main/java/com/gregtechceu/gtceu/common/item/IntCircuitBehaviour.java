@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.common.item;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.item.component.IAddInformation;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;
 import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
@@ -90,14 +90,14 @@ public class IntCircuitBehaviour implements IItemUIFactory, IAddInformation {
                 .widget(label);
         SlotWidget slotwidget = new SlotWidget(
                 new CustomItemStackHandler(stack(getCircuitConfiguration(holder.getHeld()))), 0, 82, 20, false, false);
-        slotwidget.setBackground(GuiTextures.SLOT);
+        slotwidget.setBackground(GUITextures.SLOT);
         modular.widget(slotwidget);
         int idx = 0;
         for (int x = 0; x <= 2; x++) {
             for (int y = 0; y <= 8; y++) {
                 int finalIdx = idx;
                 modular.widget(new ButtonWidget(10 + (18 * y), 48 + (18 * x), 18, 18,
-                        new GuiTextureGroup(GuiTextures.SLOT, new ItemStackTexture(stack(finalIdx)).scale(16f / 18)),
+                        new GuiTextureGroup(GUITextures.SLOT, new ItemStackTexture(stack(finalIdx)).scale(16f / 18)),
                         data -> {
                             setCircuitConfiguration(holder, finalIdx);
                             slotwidget.setHandlerSlot(new CustomItemStackHandler(stack(finalIdx)), 0);
@@ -108,13 +108,13 @@ public class IntCircuitBehaviour implements IItemUIFactory, IAddInformation {
         for (int x = 0; x <= 5; x++) {
             int finalIdx = x + 27;
             modular.widget(new ButtonWidget(10 + (18 * x), 102, 18, 18,
-                    new GuiTextureGroup(GuiTextures.SLOT, new ItemStackTexture(stack(finalIdx)).scale(16f / 18)),
+                    new GuiTextureGroup(GUITextures.SLOT, new ItemStackTexture(stack(finalIdx)).scale(16f / 18)),
                     data -> {
                         setCircuitConfiguration(holder, finalIdx);
                         slotwidget.setHandlerSlot(new CustomItemStackHandler(stack(finalIdx)), 0);
                     }));
         }
-        modular.mainGroup.setBackground(GuiTextures.BACKGROUND);
+        modular.mainGroup.setBackground(GUITextures.BACKGROUND);
         return modular;
     }
 }

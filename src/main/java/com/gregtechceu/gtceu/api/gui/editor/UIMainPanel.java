@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.gui.editor;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 
 import com.lowdragmc.lowdraglib.gui.editor.ui.Editor;
 import com.lowdragmc.lowdraglib.gui.editor.ui.MainPanel;
@@ -35,7 +35,7 @@ public class UIMainPanel extends MainPanel implements IGuiTexture {
                     width - editor.getConfigPanel().getSize().getWidth(), height);
         }
         var border = 4;
-        var background = GuiTextures.BACKGROUND;
+        var background = GUITextures.BACKGROUND;
         var position = root.getPosition();
         var size = root.getSize();
         var w = Math.max(size.width + border * 2, 172);

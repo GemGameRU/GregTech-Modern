@@ -6,7 +6,7 @@ import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.FilterHandler;
 import com.gregtechceu.gtceu.api.cover.IFilterHandler;
 import com.gregtechceu.gtceu.api.cover.IFluidFilter;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.LongInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.data.lang.LangHandler;
@@ -128,7 +128,7 @@ public class AdvancedFluidDetectorCover extends FluidDetectorCover implements IU
         // Invert Redstone Output Toggle:
         group.addWidget(new ToggleButtonWidget(
                 9, 20, 20, 20,
-                GuiTextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
+                GUITextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
 
             @Override
             public void updateScreen() {

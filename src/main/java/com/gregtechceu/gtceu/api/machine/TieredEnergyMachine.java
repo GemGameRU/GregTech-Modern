@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.machine;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.editor.EditableUI;
 import com.gregtechceu.gtceu.api.machine.feature.IExplosionMachine;
 import com.gregtechceu.gtceu.api.machine.feature.ITieredMachine;
@@ -135,9 +135,9 @@ public class TieredEnergyMachine extends TieredMachine implements ITieredMachine
     protected static EditableUI<ProgressWidget, TieredEnergyMachine> createEnergyBar() {
         return new EditableUI<>("energy_container", ProgressWidget.class, () -> {
             var progressBar = new ProgressWidget(ProgressWidget.JEIProgress, 0, 0, 18, 60,
-                    new ProgressTexture(IGuiTexture.EMPTY, GuiTextures.ENERGY_BAR_BASE));
+                    new ProgressTexture(IGuiTexture.EMPTY, GUITextures.ENERGY_BAR_BASE));
             progressBar.setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP);
-            progressBar.setBackground(GuiTextures.ENERGY_BAR_BACKGROUND);
+            progressBar.setBackground(GUITextures.ENERGY_BAR_BACKGROUND);
             return progressBar;
         }, (progressBar, machine) -> {
             progressBar.setProgressSupplier(

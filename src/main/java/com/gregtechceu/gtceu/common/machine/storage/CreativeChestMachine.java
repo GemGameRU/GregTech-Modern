@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.machine.storage;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
 import com.gregtechceu.gtceu.api.transfer.item.InfiniteItemTransferProxy;
@@ -104,10 +104,10 @@ public class CreativeChestMachine extends QuantumChestMachine {
         var group = new WidgetGroup(0, 0, 176, 131);
         group.addWidget(new PhantomSlotWidget(cache, 0, 36, 6)
                 .setClearSlotOnRightClick(true)
-                .setBackgroundTexture(GuiTextures.SLOT)
+                .setBackgroundTexture(GUITextures.SLOT)
                 .setChangeListener(this::markDirty));
         group.addWidget(new LabelWidget(7, 9, "gtceu.creative.chest.item"));
-        group.addWidget(new ImageWidget(7, 48, 154, 14, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(7, 48, 154, 14, GUITextures.DISPLAY));
         group.addWidget(new TextFieldWidget(9, 50, 152, 10, () -> String.valueOf(itemsPerCycle), value -> {
             if (!value.isEmpty()) {
                 itemsPerCycle = Integer.parseInt(value);
@@ -115,7 +115,7 @@ public class CreativeChestMachine extends QuantumChestMachine {
         }).setMaxStringLength(11).setNumbersOnly(1, Integer.MAX_VALUE));
         group.addWidget(new LabelWidget(7, 28, "gtceu.creative.chest.ipc"));
 
-        group.addWidget(new ImageWidget(7, 85, 154, 14, GuiTextures.DISPLAY));
+        group.addWidget(new ImageWidget(7, 85, 154, 14, GUITextures.DISPLAY));
         group.addWidget(new TextFieldWidget(9, 87, 152, 10, () -> String.valueOf(ticksPerCycle), value -> {
             if (!value.isEmpty()) {
                 ticksPerCycle = Integer.parseInt(value);

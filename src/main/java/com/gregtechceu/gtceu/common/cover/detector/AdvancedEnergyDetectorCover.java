@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.capability.IEnergyInfoProvider;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.api.cover.IUICover;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.LongInputWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.data.lang.LangHandler;
@@ -129,7 +129,7 @@ public class AdvancedEnergyDetectorCover extends EnergyDetectorCover implements 
         // Invert Redstone Output Toggle:
         group.addWidget(new ToggleButtonWidget(
                 9, 20, 20, 20,
-                GuiTextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
+                GUITextures.INVERT_REDSTONE_BUTTON, this::isInverted, this::setInverted) {
 
             @Override
             public void updateScreen() {
@@ -142,7 +142,7 @@ public class AdvancedEnergyDetectorCover extends EnergyDetectorCover implements 
         // Mode (EU / Percent) Toggle:
         group.addWidget(new ToggleButtonWidget(
                 176 - 29, 20, 20, 20,
-                GuiTextures.ENERGY_DETECTOR_COVER_MODE_BUTTON, this::isUsePercent, this::setUsePercent) {
+                GUITextures.ENERGY_DETECTOR_COVER_MODE_BUTTON, this::isUsePercent, this::setUsePercent) {
 
             @Override
             public void updateScreen() {

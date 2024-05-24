@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.api.cover;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.ScrollablePhantomFluidWidget;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.api.transfer.fluid.CustomFluidTank;
@@ -132,15 +132,15 @@ public class SimpleFluidFilter implements IFluidFilter {
                 tank.setChangeListener(() -> {
                     matches[index] = fluidStorageSlots[index].getFluidInTank(0);
                     onUpdated.accept(this);
-                }).setBackground(GuiTextures.SLOT);
+                }).setBackground(GUITextures.SLOT);
 
                 group.addWidget(tank);
             }
         }
         group.addWidget(new ToggleButtonWidget(18 * 3 + 5, 0, 20, 20,
-                GuiTextures.BUTTON_BLACKLIST, this::isBlackList, this::setBlackList));
+                GUITextures.BUTTON_BLACKLIST, this::isBlackList, this::setBlackList));
         group.addWidget(new ToggleButtonWidget(18 * 3 + 5, 20, 20, 20,
-                GuiTextures.BUTTON_FILTER_NBT, this::isIgnoreNbt, this::setIgnoreNbt));
+                GUITextures.BUTTON_FILTER_NBT, this::isIgnoreNbt, this::setIgnoreNbt));
         return group;
     }
 

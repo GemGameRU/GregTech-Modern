@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
 import com.gregtechceu.gtceu.api.capability.ILaserContainer;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
@@ -188,7 +188,7 @@ public class CreativeEnergyContainerMachine extends MetaMachine implements ILase
     @Override
     public ModularUI createUI(Player entityPlayer) {
         return new ModularUI(176, 166, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(new LabelWidget(7, 32, "gtceu.creative.energy.voltage"))
                 .widget(new TextFieldWidget(9, 47, 152, 16, () -> String.valueOf(voltage),
                         value -> {

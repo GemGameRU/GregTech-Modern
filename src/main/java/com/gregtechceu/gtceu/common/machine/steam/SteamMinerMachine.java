@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.common.machine.steam;
 import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.IMiner;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.gui.widget.PredicatedImageWidget;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -174,22 +174,22 @@ public class SteamMinerMachine extends SteamWorkableMachine implements IMiner, I
         int rowSize = (int) Math.sqrt(inventorySize);
 
         ModularUI builder = new ModularUI(175, 176, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND_STEAM.get(false));
-        builder.widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT_STEAM.get(false), 7,
+                .background(GUITextures.BACKGROUND_STEAM.get(false));
+        builder.widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT_STEAM.get(false), 7,
                 94, true));
 
         for (int y = 0; y < rowSize; y++) {
             for (int x = 0; x < rowSize; x++) {
                 int index = y * rowSize + x;
                 builder.widget(new SlotWidget(exportItems, index, 142 - rowSize * 9 + x * 18, 18 + y * 18, true, false)
-                        .setBackgroundTexture(GuiTextures.SLOT_STEAM.get(false)));
+                        .setBackgroundTexture(GUITextures.SLOT_STEAM.get(false)));
             }
         }
 
         builder.widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()));
-        builder.widget(new PredicatedImageWidget(79, 42, 18, 18, GuiTextures.INDICATOR_NO_STEAM.get(isHighPressure))
+        builder.widget(new PredicatedImageWidget(79, 42, 18, 18, GUITextures.INDICATOR_NO_STEAM.get(isHighPressure))
                 .setPredicate(recipeLogic::isWaiting));
-        builder.widget(new ImageWidget(7, 16, 105, 75, GuiTextures.DISPLAY_STEAM.get(false)));
+        builder.widget(new ImageWidget(7, 16, 105, 75, GUITextures.DISPLAY_STEAM.get(false)));
         builder.widget(new ComponentPanelWidget(10, 19, this::addDisplayText)
                 .setMaxWidthLimit(84));
         builder.widget(new ComponentPanelWidget(70, 19, this::addDisplayText2)

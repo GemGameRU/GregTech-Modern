@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.part;
 
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.IRecipeLogicMachine;
@@ -102,9 +102,9 @@ public class MufflerPartMachine extends TieredPartMachine implements IMufflerMac
         int xOffset = rowSize == 10 ? 9 : 0;
         var modular = new ModularUI(176 + xOffset * 2,
                 18 + 18 * rowSize + 94, this, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
+                .background(GUITextures.BACKGROUND)
                 .widget(new LabelWidget(10, 5, getBlockState().getBlock().getDescriptionId()))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7 + xOffset,
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GUITextures.SLOT, 7 + xOffset,
                         18 + 18 * rowSize + 12, true));
 
         for (int y = 0; y < rowSize; y++) {
@@ -112,7 +112,7 @@ public class MufflerPartMachine extends TieredPartMachine implements IMufflerMac
                 int index = y * rowSize + x;
                 modular.widget(new SlotWidget(inventory, index,
                         (88 - rowSize * 9 + x * 18) + xOffset, 18 + y * 18, true, false)
-                        .setBackgroundTexture(GuiTextures.SLOT));
+                        .setBackgroundTexture(GUITextures.SLOT));
             }
         }
         return modular;

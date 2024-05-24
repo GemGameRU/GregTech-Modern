@@ -10,7 +10,7 @@ import com.gregtechceu.gtceu.api.cover.IUICover;
 import com.gregtechceu.gtceu.api.cover.FilterHandler;
 import com.gregtechceu.gtceu.api.cover.IFilterHandler;
 import com.gregtechceu.gtceu.api.cover.IItemFilter;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.EnumSelectorWidget;
 import com.gregtechceu.gtceu.api.gui.widget.IntInputWidget;
 import com.gregtechceu.gtceu.api.machine.ConditionalSubscriptionHandler;
@@ -429,8 +429,8 @@ public class ConveyorCover extends CoverBehavior implements IUICover, IControlla
                             LocalizationUtils.format("cover.conveyor.mode", LocalizationUtils.format(io.tooltip)));
                 })
                 .setTexture(
-                        new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, IO.OUT.icon),
-                        new GuiTextureGroup(GuiTextures.VANILLA_BUTTON, IO.IN.icon))
+                        new GuiTextureGroup(GUITextures.VANILLA_BUTTON, IO.OUT.icon),
+                        new GuiTextureGroup(GUITextures.VANILLA_BUTTON, IO.IN.icon))
                 .setPressed(io == IO.IN)
                 .setHoverTooltips(
                         LocalizationUtils.format("cover.conveyor.mode", LocalizationUtils.format(io.tooltip)));

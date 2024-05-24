@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.machine.feature;
 
 import com.gregtechceu.gtceu.api.capability.IControllable;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.fancy.*;
 import com.gregtechceu.gtceu.api.machine.fancyconfigurator.CombinedDirectionalFancyConfigurator;
 import com.gregtechceu.gtceu.api.machine.fancyconfigurator.MachineModeFancyConfigurator;
@@ -64,7 +64,7 @@ public interface IFancyUIMachine extends IUIMachine, IFancyUIProvider {
     default Widget createUIWidget() {
         var group = new WidgetGroup(0, 0, 100, 100);
         if (isRemote()) {
-            group.addWidget(new ImageWidget((100 - 48) / 2, 60, 48, 16, GuiTextures.SCENE));
+            group.addWidget(new ImageWidget((100 - 48) / 2, 60, 48, 16, GUITextures.SCENE));
             TrackedDummyWorld world = new TrackedDummyWorld();
             world.addBlock(BlockPos.ZERO, BlockInfo.fromBlockState(self().getBlockState()));
             SceneWidget sceneWidget = new SceneWidget(0, 0, 100, 100, world) {
@@ -116,8 +116,8 @@ public interface IFancyUIMachine extends IUIMachine, IFancyUIProvider {
     default void attachConfigurators(ConfiguratorPanel configuratorPanel) {
         if (this instanceof IControllable controllable) {
             configuratorPanel.attachConfigurators(new IFancyConfiguratorButton.Toggle(
-                    GuiTextures.BUTTON_POWER.getSubTexture(0, 0, 1, 0.5),
-                    GuiTextures.BUTTON_POWER.getSubTexture(0, 0.5, 1, 0.5),
+                    GUITextures.BUTTON_POWER.getSubTexture(0, 0, 1, 0.5),
+                    GUITextures.BUTTON_POWER.getSubTexture(0, 0.5, 1, 0.5),
                     controllable::isWorkingEnabled, (clickData, pressed) -> controllable.setWorkingEnabled(pressed))
                     .setTooltipsSupplier(pressed -> List.of(
                             Component.translatable(

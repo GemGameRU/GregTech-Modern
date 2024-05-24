@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.cover.voiding;
 
 import com.gregtechceu.gtceu.api.capability.ICoverableBlock;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.GUITextures;
 import com.gregtechceu.gtceu.api.gui.widget.ToggleButtonWidget;
 import com.gregtechceu.gtceu.common.cover.PumpCover;
 
@@ -97,7 +97,7 @@ public class FluidVoidingCover extends PumpCover {
         group.addWidget(new LabelWidget(10, 5, getUITitle()));
 
         group.addWidget(new ToggleButtonWidget(10, 20, 20, 20,
-                GuiTextures.BUTTON_POWER, this::isEnabled, this::setEnabled));
+                GUITextures.BUTTON_POWER, this::isEnabled, this::setEnabled));
 
         // group.addWidget(filterHandler.createFilterSlotUI(36, 21));
         group.addWidget(filterHandler.createFilterSlotUI(148, 91));
